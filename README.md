@@ -1,4 +1,4 @@
-# Filecoin Dev Summit 2023
+# Filecoin Dev Summit 2024
 Website Url: https://fildev.io/, 
 Links Page: https://fil.page/
 
