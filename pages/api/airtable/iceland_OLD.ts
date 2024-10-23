@@ -13,14 +13,14 @@ if (process.env.NODE_ENV !== 'production') {
 export default async function apiAirtableStakingTable(req, res) {
   await Server.cors(req, res);
 
-  const name = process.env.FILSUMMIT_FD2_TABLE_ID;
+  const name = 'NA/EU Talk Track Submissions + Forms';
 
   try {
     const base = new Airtable({
-      apiKey: process.env.FILSUMMIT_FD2_API_KEY,
-    }).base(process.env.FILSUMMIT_FD2_BASE_ID!);
+      apiKey: process.env.FILSUMMIT_TOKEN,
+    }).base(process.env.FILSUMMIT_BASE_ID!);
 
-    const records = await base(name!).select().all();
+    const records = await base(name).select().all();
 
     res.json({ records });
   } catch (e) {

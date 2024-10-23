@@ -29,8 +29,8 @@ export function toDateISOString(data) {
 }
 
 export function formatUTCDateString(data: string | number | Date): string {
-  // Ensure the input is an ISO format
-  const date = moment.utc(new Date(data).toISOString());
+  // Initialize a moment.js library object
+  const date = moment.utc(data);
 
   // Check if the date is valid
   if (!date.isValid()) {
@@ -39,12 +39,13 @@ export function formatUTCDateString(data: string | number | Date): string {
   }
 
   // Format the date
-  return date.format('ddd, MMM D');
+  const formattedDate = date.format('ddd, MMM D');
+  return formattedDate;
 }
 
 export function formatUTCTime(data: string | number | Date): string {
-  // Ensure the input is an ISO format
-  const time = moment.utc(new Date(data).toISOString());
+  // Initialize a moment.js library object
+  const time = moment.utc(data);
 
   // Check if the time is valid
   if (!time.isValid()) {
@@ -53,7 +54,8 @@ export function formatUTCTime(data: string | number | Date): string {
   }
 
   // Format the time
-  return time.format('h:mm a');
+  const formattedTime = time.format('h:mm a');
+  return formattedTime;
 }
 
 export function toDateISOStrinWithTimezone(data, timezone) {

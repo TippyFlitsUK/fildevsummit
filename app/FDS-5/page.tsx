@@ -1,16 +1,21 @@
 import '@root/global.scss';
 
+import {
+  FILECOIN_DEV_SUMMIT_BANGKOK_2024_HERO_CONTENT,
+  FILECOIN_DEV_SUMMIT_BANGKOK_2024_NAVIGATION_CONTENT,
+  FILECOIN_DEV_SUMMIT_BANGKOK_2024_PAGE_CONTENT,
+  FILECOIN_DEV_SUMMIT_PAGE_STYLE_CONTENT,
+  FOOTER_FILECOIN_DEV_SUMMIT_CONTENT,
+} from '@root/content/fildevsummit/filecoin-dev-bangkok-2024';
 import { headers } from 'next/headers';
+import { makeRequest } from '@root/common/utilities';
 import FooterTiny from '@root/components/FooterTiny';
 import Hero from '@root/components/Hero';
 import ResponsiveNavbar from '@root/components/ResponsiveNavbar';
 import SectionEventPage from '@root/components/SectionEventPage';
 
-import { makeRequest } from '@root/common/utilities';
-import { FILECOIN_DEV_SUMMIT_SINGAPORE_2024_HERO_CONTENT, FIL_DEV_SUMMIT_SINGAPORE_NAVIGATION_CONTENT, FILECOIN_DEV_SUMMIT_SINGAPORE_PAGE_CONTENT, FIL_DEV_SUMMIT_PAGE_STYLE_CONTENT, FOOTER_FILECOIN_DEV_SUMMIT_CONTENT } from '@root/content/fildevsummit/filecoin-dev-singapore';
-
 export async function generateMetadata({ params, searchParams }) {
-  const title = 'FIL Dev Summit 2023: Singapore';
+  const title = 'FDS-5: Bangkok';
   const description =
     'FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!).';
   const url = 'https://fildev.io';
@@ -37,13 +42,13 @@ export async function generateMetadata({ params, searchParams }) {
 }
 
 export default async function Page(props) {
-  const blocks = FILECOIN_DEV_SUMMIT_SINGAPORE_PAGE_CONTENT;
+  const blocks = FILECOIN_DEV_SUMMIT_BANGKOK_2024_PAGE_CONTENT;
   const currentHeaders = headers();
   const footerContent = FOOTER_FILECOIN_DEV_SUMMIT_CONTENT;
-  const hero = FILECOIN_DEV_SUMMIT_SINGAPORE_2024_HERO_CONTENT;
+  const hero = FILECOIN_DEV_SUMMIT_BANGKOK_2024_HERO_CONTENT;
   const host = currentHeaders.get('host');
-  const navContent = FIL_DEV_SUMMIT_SINGAPORE_NAVIGATION_CONTENT;
-  const pageStyle = FIL_DEV_SUMMIT_PAGE_STYLE_CONTENT;
+  const navContent = FILECOIN_DEV_SUMMIT_BANGKOK_2024_NAVIGATION_CONTENT;
+  const pageStyle = FILECOIN_DEV_SUMMIT_PAGE_STYLE_CONTENT;
 
   const promises = blocks?.flatMap((contentItem) =>
     contentItem?.block?.map(async (blockItem) => {

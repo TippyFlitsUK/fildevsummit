@@ -15,7 +15,7 @@ import {
 import { makeRequest } from '@root/common/utilities';
 
 export async function generateMetadata({ params, searchParams }) {
-  const title = 'FIL Dev Summit 2023: Singapore and Iceland';
+  const title = 'FIL Dev Summit';
   const description =
     'FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!).';
   const url = 'https://fildev.io';

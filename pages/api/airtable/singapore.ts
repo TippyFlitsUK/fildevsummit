@@ -6,17 +6,21 @@ import * as Server from '@common/server';
 
 import Airtable from 'airtable';
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 export default async function apiAirtableStakingTable(req, res) {
   await Server.cors(req, res);
 
-  const name = 'Asia Talk/Track Submissions + Forms';
+  const name = process.env.FILSUMMIT_FD1_TABLE_ID;
 
   try {
     const base = new Airtable({
-      apiKey: process.env.FILSUMMIT_TOKEN,
-    }).base(process.env.FILSUMMIT_BASE_ID!);
+      apiKey: process.env.FILSUMMIT_FD1_API_KEY,
+    }).base(process.env.FILSUMMIT_FD1_BASE_ID!);
 
-    const records = await base(name).select().all();
+    const records = await base(name!).select().all();
 
     res.json({ records });
   } catch (e) {

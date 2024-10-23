@@ -51,12 +51,12 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             type: BlockTypeEnum.MEDIA,
             media: {
               type: TypeName.IMAGE_WITH_OVERLAY_TEXT,
-              src: '/media/brussels-full.jpg',
+              src: '/media/bangkok-full.jpg',
               ariaLabel: 'FIL Dev Summit',
-              link: '/FDS-4',
-              title: 'FDS-4: ETH Brussels',
-              subtitle: 'July 9, 2024',
-              rightSubheading: 'Organized by FilOz',
+              link: '/FDS-5',
+              title: 'FDS-5: FIL Bangkok',
+              subtitle: 'November 6-8, 2024',
+              rightSubheading: 'Organized by FilOz & Filecoin Foundation',
             },
           },
         ],
@@ -79,8 +79,21 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             type: BlockTypeEnum.MEDIA,
             media: {
               type: TypeName.IMAGE_WITH_OVERLAY_TEXT,
+              src: '/media/brussels-full.jpg',
+              ariaLabel: 'FDS-4: Brussles',
+              link: '/FDS-4',
+              title: 'FDS-4: Brussles',
+              subtitle: 'July 9-11, 2024',
+              rightSubheading: 'Organized by Miwa',
+            },
+          },          
+          {
+            id: 'past-events',
+            type: BlockTypeEnum.MEDIA,
+            media: {
+              type: TypeName.IMAGE_WITH_OVERLAY_TEXT,
               src: '/media/denver-full.jpg',
-              ariaLabel: 'FIL Dev Summit',
+              ariaLabel: 'FDS-3: Denver',
               link: '/FDS-3',
               title: 'FDS-3: Denver',
               subtitle: 'February 29, 2024',
@@ -93,10 +106,10 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             media: {
               type: TypeName.IMAGE_WITH_OVERLAY_TEXT,
               src: '/media/iceland-full.jpg',
-              ariaLabel: 'FIL Dev Summit',
+              ariaLabel: 'FDS-2: Iceland',
               link: '/FDS-2',
               title: 'FDS-2: Iceland',
-              subtitle: 'September 25 - 27, 2023',
+              subtitle: 'September 25-27, 2023',
               rightSubheading: 'Organized by Miwa',
             },
           },
@@ -106,14 +119,73 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             media: {
               type: TypeName.IMAGE_WITH_OVERLAY_TEXT,
               src: '/media/singapore-full.png',
-              ariaLabel: 'FIL Dev Summit',
+              ariaLabel: 'FDS-1: Singapore',
               link: '/FDS-1',
               title: 'FDS-1: Singapore',
-              subtitle: 'September 12 - 14, 2023',
+              subtitle: 'September 12-14, 2023',
               rightSubheading: 'Organized by Miwa',
             },
           },
         ],
+      },
+    ],
+  },
+  {
+    id: 'brussels',
+    backgroundColor: 'var(--color-white)',
+    direction: BlockDirectionEnum.COLUMN,
+    noGutter: 'no',
+    block: [
+      {
+        id: 'media',
+        type: BlockTypeEnum.MEDIA,
+        media: {
+          type: TypeName.IMAGE_TEXT_WITH_OVERFLOW,
+          heading: 'FDS-4: Brussels',
+          link: '/FDS-4',
+          description: 'July 9-11, 2024',
+          smallDesc: 'Organized by Miwa',
+          image: {
+            alt: 'FDS-4: Brussels',
+            src: '/media/brussels-full.jpg',
+          },
+        },
+      },
+    ],
+  },
+//  {
+//   id: 'recap-video',
+//    title: 'FDS-2: Iceland Recap',
+//    direction: 'column',
+//    block: [
+//      {
+//        id: 'media',
+//        type: BlockTypeEnum.MEDIA,
+//        media: {
+//          type: TypeName.MEDIA_VIDEO,
+//          src: 'https://www.youtube.com/watch?v=0tydpHgI_zE',
+//          ariaLabel: 'FIL Dev Summit 2023 - Iceland',
+//        },
+//      },
+//    ],
+//  },
+  {
+    id: 'brussels',
+    direction: BlockDirectionEnum.COLUMN,
+    title: 'FDS-4: Brussels Schedule',
+    description: '',
+    cta: {
+      type: CallToActionVariantEnum.BUTTON,
+      textColor: 'white',
+      target: '_blank',
+      text: 'View the schedule in a list format',
+      buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+      link: '/FDS-4/list',
+    },
+    block: [
+      {
+        type: BlockTypeEnum.SCHEDULE_ICELAND,
+        scheduleData: FIL_DEV_SUMMIT_ICELAND,
       },
     ],
   },
@@ -128,12 +200,12 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
         type: BlockTypeEnum.MEDIA,
         media: {
           type: TypeName.IMAGE_TEXT_WITH_OVERFLOW,
-          heading: 'ETH Denver',
+          heading: 'FDS-3: Denver',
           link: '/FDS-3',
-          description: 'February 29th, 2024',
+          description: 'February 29, 2024',
           smallDesc: 'Organized by Miwa',
           image: {
-            alt: 'ETH Denver Fenruary 29th, 2024',
+            alt: 'FDS-3: Denver',
             src: '/media/denver-full.jpg',
           },
         },
@@ -159,7 +231,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
   {
     id: 'denver',
     direction: BlockDirectionEnum.COLUMN,
-    title: 'FDS-3: ETH Denver Schedule',
+    title: 'FDS-3: Denver Schedule',
     description: '',
     cta: {
       type: CallToActionVariantEnum.BUTTON,
@@ -187,12 +259,12 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
         type: BlockTypeEnum.MEDIA,
         media: {
           type: TypeName.IMAGE_TEXT_WITH_OVERFLOW,
-          heading: 'Iceland',
+          heading: 'FDS-2: Iceland',
           link: '/FDS-2',
-          description: 'September 25 - 27th, 2023',
+          description: 'September 25-27, 2023',
           smallDesc: 'Organized by Miwa',
           image: {
-            alt: 'Iceland September 25 - 27th, 2023',
+            alt: 'FDS-2 - Iceland',
             src: '/media/iceland-full.jpg',
           },
         },
@@ -246,11 +318,11 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
         type: BlockTypeEnum.MEDIA,
         media: {
           type: TypeName.IMAGE_TEXT_WITH_OVERFLOW,
-          heading: 'Past Event - Singapore',
+          heading: 'FDS-1: Singapore',
           link: '/FDS-1',
-          description: 'September 12 - 14th, 2023',
+          description: 'September 12-14, 2023',
           image: {
-            alt: 'FIL Dev Summit - Singapore',
+            alt: 'FDS-1: Singapore',
             src: '/media/singapore-full.png',
           },
         },
@@ -305,9 +377,9 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
         collapsables: [
           {
             type: BlockTypeEnum.COLLAPSABLE,
-            title: 'What is FIL Dev Summit - ETH Denver 2024?',
+            title: 'What is FIL Dev Summit?',
             collapsedText:
-              'FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!). This would include FVM smart contract builders, core protocol devs, implementation engineering teams, tool builders, large storage clients, and even token holders engaged in network governance. Our goal would be to build alignment around the current roadmap and trajectory of protocol improvements, improve our dev tooling and capabilities, grow inter- and intra-team connections, and accelerate upcoming launches in Q4/Q1.',
+              'FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!). This would include FVM smart contract builders, core protocol devs, implementation engineering teams, tool builders, large storage clients, and even token holders engaged in network governance. Our goal would be to build alignment around the current roadmap and trajectory of protocol improvements, improve our dev tooling and capabilities, grow inter- and intra-team connections, and accelerate upcoming launches.',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
@@ -369,11 +441,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             id: 'media',
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'What is the track system and how does it work?',
-            collapsedText: `This is a choose-your-own-adventure event, so please choose the track(s), sessions, arrival and departure dates, and activities that are interesting and relevant to you. We are actively working on putting together an amazing schedule based on your submissions, suggestions, and feedback. Help shape this event by submitting your own talk or track!
-
-- [Submit for Asia](https://airtable.com/appEjnh5rpWMsjocb/shrw3Ha0yTusDmcOg)
-
-- [Submit for EU/NA](https://airtable.com/appEjnh5rpWMsjocb/shr6SmQjqdgn5Pc90) `,
+            collapsedText: `This is a choose-your-own-adventure event, so please choose the track(s), sessions, arrival and departure dates, and activities that are interesting and relevant to you. We are actively working on putting together an amazing schedule based on your submissions, suggestions, and feedback. Help shape this event by submitting your own talk or track!`,
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
@@ -410,20 +478,14 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'Will the sessions be recorded?',
             collapsedText:
-              'All sessions will be recorded and uploaded to [Youtube channel](https://www.youtube.com/@IPFSbot) ASAP. We are also encouraging everyone to join [#fil-dev-summit](https://app.slack.com/client/TEHTVS1L6/C05LHC1ULG1) in [Filecoin](https://filecoinproject.slack.com/ssb/redirect) slack to stay up to date with all hallway track conversations.',
+              'All sessions will be recorded and uploaded to [Youtube channel](https://www.youtube.com/@FilecoinProject) ASAP. We are also encouraging everyone to join [#fil-dev-summit](https://app.slack.com/client/TEHTVS1L6/C05LHC1ULG1) in [Filecoin](https://filecoinproject.slack.com/ssb/redirect) slack to stay up to date with all hallway track conversations.',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
             id: 'media',
             type: BlockTypeEnum.COLLAPSABLE,
-            title: 'Code of conduct/covid policy',
-            collapsedText: ` We will be following the [Code of Conduct](https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md).
-
-          FIL Dev Summit Covid Policy:
-
-          - Masks and testing are optional and at your discretion.
-
-          - If you are presenting any symptoms of being sick or have come in contact with someone who has presented symptoms or tested positive in the last five days, please do not attend the event for your own and all other attendees' health and safety. Rest up and feel better!`,
+            title: 'Code of Conduct',
+            collapsedText: ` We will be following the [Code of Conduct](https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md).`,
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
         ],
@@ -499,7 +561,7 @@ export const FILECOIN_DEV_SUMMIT_NAVIGATION_CONTENT = {
       text: 'Apply to Attend',
       buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
       textColor: 'white',
-      href: 'https://lu.ma/FDS-4',
+      href: 'https://lu.ma/vcdjb8pl',
       target: '_blank',
     },
   ],

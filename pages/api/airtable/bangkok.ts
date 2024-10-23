@@ -13,12 +13,12 @@ if (process.env.NODE_ENV !== 'production') {
 export default async function apiAirtableStakingTable(req, res) {
   await Server.cors(req, res);
 
-  const name = process.env.FILSUMMIT_FD2_TABLE_ID;
+  const name = process.env.FILSUMMIT_FD5_TABLE_ID;
 
   try {
     const base = new Airtable({
-      apiKey: process.env.FILSUMMIT_FD2_API_KEY,
-    }).base(process.env.FILSUMMIT_FD2_BASE_ID!);
+      apiKey: process.env.FILSUMMIT_FD5_API_KEY,
+    }).base(process.env.FILSUMMIT_FD5_BASE_ID!);
 
     const records = await base(name!).select().all();
 
