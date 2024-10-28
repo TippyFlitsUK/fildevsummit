@@ -85,7 +85,7 @@ export const FILECOIN_DEV_SUMMIT_BANGKOK_2024_PAGE_CONTENT = [
     },
     block: [
       {
-        id: 'participating-teams',
+        id: 'participating-teams-row1',
         type: BlockTypeEnum.LOGO_GRID,
         logosLarge: [
           {
@@ -99,7 +99,33 @@ export const FILECOIN_DEV_SUMMIT_BANGKOK_2024_PAGE_CONTENT = [
           {
             src: '/media/LWWeb3.png',
             href: 'https://24.labweek.io/24-web3',
-          }   
+          },   
+          {
+            src: '/media/boosty.png',
+            href: 'https://boostylabs.com/',
+          },
+        ],
+      },
+      {
+        id: 'participating-teams-row2',
+        type: BlockTypeEnum.LOGO_GRID,
+        logosLarge: [
+          {
+            src: '/media/zetacube.png',
+            href: 'https://www.zetacube.net/',
+          },
+          {
+            src: '/media/glif-long.png',
+            href: 'https://www.glif.io/en',
+          },
+          {
+            src: '/media/lighthouse.png',
+            href: 'https://www.lighthouse.storage/',
+          },          
+          {
+            src: '/media/secured.png',
+            href: 'https://secured.finance/',
+          }
         ],
       },
     ],
