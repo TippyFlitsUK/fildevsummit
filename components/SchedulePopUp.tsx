@@ -67,7 +67,7 @@ export function SchedulePopUp({ selectedEvent, isOpen, onClose, style }) {
               <h4 style={{ paddingBottom: '1rem', borderBottom: '0.5px solid var(--color-black)' }}>Schedule</h4>
               <div className={` ${styles.tableHeader}`}>
                 <h4 className={`${styles.col1} ${styles.headerTitle}`}>Time</h4>
-                <h4 className={`${styles.col2} ${styles.headerTitle}`}>Track Lead</h4>
+                <h4 className={`${styles.col2} ${styles.headerTitle}`}>Speakers</h4>
                 <h4 className={`${styles.col4} ${styles.headerTitle}`}>Info</h4>
               </div>
             </>
