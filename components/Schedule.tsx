@@ -39,7 +39,10 @@ export default function Schedule({ calendarData, scheduleId }) {
         });
 
         if (eventData) {
-          setSelectedEvent((eventData as any).trackDetails);
+          setSelectedEvent({
+    		...(eventData as any).trackDetails,
+    		records: (eventData as any).records
+	   });
           setIsOverlayOpen(true);
           document.getElementById(scheduleId)?.scrollIntoView({ behavior: 'smooth' });
         } else {
