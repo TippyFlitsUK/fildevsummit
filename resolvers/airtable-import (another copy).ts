@@ -364,8 +364,8 @@ export function calendarDataWithAddedDates(formattedCalendarData, emptyDatesToAd
 
     // Sort the keys (dates) in ascending order using Moment.js library
     const sortedDates = Object.keys(result).sort((a, b) => {
-      const dateA = moment.utc(a);
-      const dateB = moment.utc(b);
+      const dateA = moment.utc(new Date(a).toISOString());
+      const dateB = moment.utc(new Date(b).toISOString());
       return dateA.isBefore(dateB) ? -1 : dateA.isAfter(dateB) ? 1 : 0;
     });
 
@@ -382,8 +382,7 @@ export function calendarDataWithAddedDates(formattedCalendarData, emptyDatesToAd
 }
 
 export function addDatesIfLessThan3EventDays(formattedCalendarData) {
-
-const result = { ...formattedCalendarData };
+  const result = { ...formattedCalendarData };
 
   // Extract dates from the formattedCalendarData keys and sort them
   const dates = Object.keys(result).sort((a, b) => moment.utc(a).diff(moment.utc(b)));
@@ -417,8 +416,8 @@ const result = { ...formattedCalendarData };
 export function sortCalendarDataByDate(formattedCalendarData) {
   // Sort the keys (dates) in ascending order using Moment.js library
   const sortedDates = Object.keys(formattedCalendarData).sort((a, b) => {
-    const dateA = moment.utc(a);
-    const dateB = moment.utc(b);
+    const dateA = moment.utc(new Date(a).toISOString());
+    const dateB = moment.utc(new Date(b).toISOString());
     return dateA.isBefore(dateB) ? -1 : dateA.isAfter(dateB) ? 1 : 0;
   });
 
