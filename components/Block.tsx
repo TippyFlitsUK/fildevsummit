@@ -18,6 +18,7 @@ import ScheduleSingapore from './ScheduleSingapore';
 import ScheduleETHDenver from './ScheduleETHDenver';
 import ScheduleETHBrussels from './ScheduleETHBrussels';
 import ScheduleBangkok from './ScheduleBangkok';
+import ScheduleToronto from './ScheduleToronto';
 import ScheduleListByTrack from './ScheduleListByTrack';
 import ScheduleListByTalks from './ScheduleListByTalks';
 import ScheduleListToggleByTimeOrTrack from './ScheduleListToggle';
@@ -54,7 +55,9 @@ export function Block({ block }) {
     case (block.type = BlockTypeEnum.SCHEDULE_ETHBRUSSELS):
       return <ScheduleETHBrussels {...block} />;      
     case (block.type = BlockTypeEnum.SCHEDULE_BANGKOK):
-      return <ScheduleBangkok {...block} />;          
+      return <ScheduleBangkok {...block} />;   
+    case (block.type = BlockTypeEnum.SCHEDULE_TORONTO):
+      return <ScheduleToronto {...block} />;                
     case (block.type = BlockTypeEnum.SCHEDULE_LIST_BY_TRACK_ICELAND):
       return <ScheduleListByTrack {...block} />;
     case (block.type = BlockTypeEnum.SCHEDULE_LIST_BY_TALK_ICELAND):

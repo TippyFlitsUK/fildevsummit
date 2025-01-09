@@ -13,6 +13,30 @@ export const FILECOIN_DEV_SUMMIT_PAGE_STYLE_CONTENT = {
   textColor: 'var(--color-black)',
 };
 
+export const FIL_DEV_SUMMIT_BANGKOK = {
+  airtable: {
+    tableName: 'NA/EU Talk Track Submissions + Forms',
+    endPoint: 'airtable/bangkok',
+    data: [],
+  },
+};
+
+export const FIL_DEV_SUMMIT_BRUSSELS = {
+  airtable: {
+    tableName: 'NA/EU Talk Track Submissions + Forms',
+    endPoint: 'airtable/ethbrussels',
+    data: [],
+  },
+};
+
+export const FIL_DEV_SUMMIT_DENVER = {
+  airtable: {
+    tableName: 'NA/EU Talk Track Submissions + Forms',
+    endPoint: 'airtable/ethdenver',
+    data: [],
+  },
+};
+
 export const FIL_DEV_SUMMIT_ICELAND = {
   airtable: {
     tableName: 'NA/EU Talk Track Submissions + Forms',
@@ -51,11 +75,11 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             type: BlockTypeEnum.MEDIA,
             media: {
               type: TypeName.IMAGE_WITH_OVERLAY_TEXT,
-              src: '/media/bangkok-full.jpg',
-              ariaLabel: 'FIL Dev Summit',
-              link: '/FDS-5',
-              title: 'FDS-5: FIL Bangkok',
-              subtitle: 'November 6-8, 2024',
+              src: '/media/Toronto-3.jpg',
+              ariaLabel: 'FDS-6: Toronto',
+              link: '/FDS-6',
+              title: 'FDS-6: Toronto',
+              subtitle: 'May 12-13, 2025',
               rightSubheading: 'Organized by FilOz & Filecoin Foundation',
             },
           },
@@ -74,6 +98,19 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
         id: 'past-events',
         type: BlockTypeEnum.MEDIA_GRID,
         media: [
+           {
+            id: 'past-events',
+            type: BlockTypeEnum.MEDIA,
+            media: {
+              type: TypeName.IMAGE_WITH_OVERLAY_TEXT,
+              src: '/media/bangkok-full.jpg',
+              ariaLabel: 'FDS-5: Bangkok',
+              link: '/FDS-5',
+              title: 'FDS-5: Bangkok',
+              subtitle: 'November 6-8, 2024',
+              rightSubheading: 'Organized by FilOz & Filecoin Foundation',
+            },
+          },    
           {
             id: 'past-events',
             type: BlockTypeEnum.MEDIA,
@@ -131,6 +168,65 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
     ],
   },
   {
+    id: 'bangkok',
+    backgroundColor: 'var(--color-white)',
+    direction: BlockDirectionEnum.COLUMN,
+    noGutter: 'no',
+    block: [
+      {
+        id: 'media',
+        type: BlockTypeEnum.MEDIA,
+        media: {
+          type: TypeName.IMAGE_TEXT_WITH_OVERFLOW,
+          heading: 'FDS-5: Bangkok',
+          link: '/FDS-5',
+          description: 'November 6-8, 2024',
+          smallDesc: 'Organized by FilOz & Filecoin Foundation',
+          image: {
+            alt: 'FDS-5: Bangkok',
+            src: '/media/bangkok-full.jpg',
+          },
+        },
+      },
+    ],
+  },
+//  {
+//   id: 'recap-video',
+//    title: 'FDS-2: Iceland Recap',
+//    direction: 'column',
+//    block: [
+//      {
+//        id: 'media',
+//        type: BlockTypeEnum.MEDIA,
+//        media: {
+//          type: TypeName.MEDIA_VIDEO,
+//          src: 'https://www.youtube.com/watch?v=0tydpHgI_zE',
+//          ariaLabel: 'FIL Dev Summit 2023 - Iceland',
+//        },
+//      },
+//    ],
+//  },
+  {
+    id: 'bangkok',
+    direction: BlockDirectionEnum.COLUMN,
+    title: 'FDS-5: Bangkok Schedule',
+    description: '',
+    cta: {
+      type: CallToActionVariantEnum.BUTTON,
+      textColor: 'white',
+      target: '_blank',
+      text: 'View the schedule in a list format',
+      buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+      link: '/FDS-5/list',
+    },
+    block: [
+      {
+        type: BlockTypeEnum.SCHEDULE_ICELAND,
+        scheduleData: FIL_DEV_SUMMIT_BANGKOK,
+      },
+    ],
+  },  
+  {
     id: 'brussels',
     backgroundColor: 'var(--color-white)',
     direction: BlockDirectionEnum.COLUMN,
@@ -185,7 +281,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
     block: [
       {
         type: BlockTypeEnum.SCHEDULE_ICELAND,
-        scheduleData: FIL_DEV_SUMMIT_ICELAND,
+        scheduleData: FIL_DEV_SUMMIT_BRUSSELS,
       },
     ],
   },
@@ -244,7 +340,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
     block: [
       {
         type: BlockTypeEnum.SCHEDULE_ICELAND,
-        scheduleData: FIL_DEV_SUMMIT_ICELAND,
+        scheduleData: FIL_DEV_SUMMIT_DENVER,
       },
     ],
   },
@@ -519,7 +615,7 @@ export const FOOTER_FILECOIN_DEV_SUMMIT_CONTENT = {
   ],
   source: [
     {
-      href: 'https://github.com/application-research/fildevsummit',
+      href: 'https://github.com/TippyFlitsUK/fildevsummit',
     },
   ],
 };
@@ -561,7 +657,7 @@ export const FILECOIN_DEV_SUMMIT_NAVIGATION_CONTENT = {
       text: 'Apply to Attend',
       buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
       textColor: 'white',
-      href: 'https://lu.ma/vcdjb8pl',
+      href: 'https://www.fildev.io/',
       target: '_blank',
     },
   ],

@@ -15,6 +15,7 @@ export enum BlockTypeEnum {
   SCHEDULE_ETHDENVER = 'schedule-ethdenver',
   SCHEDULE_ETHBRUSSELS = 'schedule-ethbrussels',
   SCHEDULE_BANGKOK = 'schedule-bangkok',
+  SCHEDULE_TORONTO = 'schedule-toronto',
   SCHEDULE_LIST_TOGGLE_BY_TRACK_TALK_ICELAND = 'schedule-list-toggle-by-talk-track-iceland',
   SCHEDULE_LIST_BY_TRACK_ICELAND = 'schedule-list-by-track-iceland',
   SCHEDULE_LIST_BY_TALK_ICELAND = 'schedule-list-by-talk-iceland',
