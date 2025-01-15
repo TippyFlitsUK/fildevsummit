@@ -545,20 +545,14 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'How can I lead a track?',
             collapsedText:
-              'Please fill out the provided forms for [FIL Dev Summit Asia](https://airtable.com/appEjnh5rpWMsjocb/shrw3Ha0yTusDmcOg) and [FIL Dev Summit EU/NA](https://airtable.com/appEjnh5rpWMsjocb/shr6SmQjqdgn5Pc90) to lead a track or a talk.',
+              'Please fill out the provided forms for [FIL Dev Summit](https://airtable.com/appqAJpfFCFbm8EaS/shrOwersC8vPKU0fE) to lead a track or a talk.',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
             id: 'media',
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'Is there a cost to attend?',
-            collapsedText: `This is an invite only event. Please fill out [this form to apply to attend](https://airtable.com/appEjnh5rpWMsjocb/shran7li4slfQSB04).
-
-- General Admission ($150 USD)
-- Early Bird Ticket  ($75 USD), now through Aug 25th!
-- Supporters ticket ($1500 USD):  Your supporter's ticket covers the cost of your own attendance & contributes to the FIL Dev Scholar's Program for others to attend as well. Thank you for your support!
-- Scholars - Limited Tickets Available. [Apply as a scholar](https://airtable.com/appEjnh5rpWMsjocb/shrusGnJBsjYDlcwS). 
-`,
+            collapsedText: `Please refer to the event page and [this form to apply to attend](https://lu.ma/eyk46hz0).`,
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
@@ -566,7 +560,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'How can I sponsor? What does it include?',
             collapsedText:
-              'Yes! We offer multiple levels of sponsorship for both locations. Please fill out our [sponsor form](https://airtable.com/appEjnh5rpWMsjocb/shrn57n37JyLSOTlV) for more information on what is included in each sponsorship.',
+              'Yes! We offer multiple levels of sponsorship for both locations. Please fill out our [sponsor form](https://airtable.com/appqAJpfFCFbm8EaS/pagDLskiazFVVDitS/form) for more information on what is included in each sponsorship.',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
@@ -615,7 +609,7 @@ export const FOOTER_FILECOIN_DEV_SUMMIT_CONTENT = {
   ],
   source: [
     {
-      href: 'https://github.com/TippyFlitsUK/fildevsummit',
+      href: 'https://github.com/filecoin-project/lotus',
     },
   ],
 };
@@ -657,7 +651,7 @@ export const FILECOIN_DEV_SUMMIT_NAVIGATION_CONTENT = {
       text: 'Apply to Attend',
       buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
       textColor: 'white',
-      href: 'https://www.fildev.io/',
+      href: 'https://lu.ma/eyk46hz0',
       target: '_blank',
     },
   ],

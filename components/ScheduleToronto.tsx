@@ -31,7 +31,7 @@ export default function SCHEDULE_TORONTO({ scheduleData }) {
   if (!torontoData) return null;
   const submitTalk = {
     text: 'Submit a Track/Session for FDS-6: Toronto',
-    url: 'https://airtable.com/appKIjmahritzRPpv/shrQcSfCc9TWUkS8d',
+    url: 'https://airtable.com/appqAJpfFCFbm8EaS/shrOwersC8vPKU0fE',
   };
   const formattedAirtableData = getFormattedAirtableFields(torontoData);
   const calendarData = sortCalendarDataByDate(formattedAirtableData);

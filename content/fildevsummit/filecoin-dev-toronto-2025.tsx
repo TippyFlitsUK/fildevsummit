@@ -37,11 +37,11 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
           {
             id: 'media',
             type: BlockTypeEnum.TICKET_CARD,
-            price: '$25',
+            price: '$20',
             name: 'FDS-6: Toronto',
             backgroundColor: 'white',
             textColor: 'black',
-            description: 'Register for FDS-6: Toronto',
+            description: '</br></br>Register for FDS-6: Toronto',
 //          description: 'Register for ETH Brussels FIL Dev Summit.</br></br><span style="color:maroon;"><b>Early Bird Offer!</b></span> - Expires 20th June, 2024',
             cta: {
               type: CallToActionVariantEnum.BORDER,
@@ -49,7 +49,7 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
               buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
               textColor: 'white',
               text: 'Register',
-              link: 'https://www.fildev.io/',
+              link: 'https://lu.ma/eyk46hz0',
             },
           },
           {
@@ -58,16 +58,16 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
             backgroundColor: 'white',
             textColor: 'black',
             price: '',
-            name: 'Sponsors',
+            name: 'Scholars',
             description:
-              'Apoly to sponsor FDS-6: Toronto',
+              'This program is designed to provide opportunities for individuals from underrepresented communities, unique circumstances, or developing areas to participate in FIL Dev Summit.',
             cta: {
               type: CallToActionVariantEnum.BORDER,
               buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
               textColor: 'white',
               target: '_blank',
-              text: 'Sponsor Application',
-              link: 'https://www.fildev.io/',
+              text: 'Scholar Application',
+              link: 'https://airtable.com/appqAJpfFCFbm8EaS/pagtOLeqCREvzwjkH/form',
             },
           },          
         ],
@@ -84,7 +84,7 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
       buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
       textColor: 'white',
       text: 'Sponsor FDS-6: Toronto',
-      link: 'https://www.fildev.io/',
+      link: 'https://airtable.com/appqAJpfFCFbm8EaS/pagDLskiazFVVDitS/form',
     },
     block: [
       {
@@ -145,7 +145,7 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
         media: {
           type: BlockTypeEnum.IMAGE_TEXT_WITH_OVERFLOW,
           heading: 'FDS-6: Toronto',
-          description: 'May 12, 2025',
+          description: 'May 12-13, 2025',
           smallDesc: 'Organized by FilOz & Filecoin Foundation',
           image: {
             alt: 'toronto-fil-dev-summit',
@@ -174,7 +174,7 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
       target: '_blank',
       text: 'Submit a Talk for FDS-6: Toronto',
       buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
-      link: 'https://www.fildev.io/',
+      link: 'https://airtable.com/appqAJpfFCFbm8EaS/shrOwersC8vPKU0fE',
     },
     
 
@@ -196,7 +196,7 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
         collapsables: [
           {
             type: BlockTypeEnum.COLLAPSABLE,
-            title: 'What is FDS-5: Bangkok 2024?',
+            title: 'What is FDS-6: Toronto 2025?',
             collapsedText:
               'FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!).',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
@@ -211,13 +211,13 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
           {
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'How can I participate at FIL Dev Summit?',
-            collapsedText: `Tickets are available now! Reserve your spot soon as spaces are limited! [Register here](https://lu.ma/vcdjb8pl)</br></br>We also offer multiple levels of sponsorship. Please fill out our [sponsor form](https://airtable.com/appKIjmahritzRPpv/pagXT2hdMoid8mtIv/form).</br></br>Our Scholars program is designed to provide opportunities for individuals from underrepresented communities, unique circumstances, or developing areas to participate in FIL Dev Summit. <strong>Scholar applications are now closed</strong>.</br></br>Finally, add the slack channel: #fil-dev-summit in [Filecoin Slack](https://filecoinproject.slack.com/archives/C05LHC1ULG1).`,
+            collapsedText: `Tickets are available now! Reserve your spot soon as spaces are limited! [Register here](https://lu.ma/eyk46hz0)</br></br>We also offer multiple levels of sponsorship. Please fill out our [sponsor form](https://airtable.com/appqAJpfFCFbm8EaS/pagDLskiazFVVDitS/form) for more information on what is included in each sponsorship.</br></br>Our Scholars program is designed to provide opportunities for individuals from underrepresented communities, unique circumstances, or developing areas to participate in FIL Dev Summit. [Submit your scholar application](https://airtable.com/appqAJpfFCFbm8EaS/pagtOLeqCREvzwjkH/form)</br></br>Finally, add the slack channel: #fil-dev-summit in [Filecoin Slack](https://filecoinproject.slack.com/archives/C05LHC1ULG1).`,
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
             type: BlockTypeEnum.COLLAPSABLE,
-            title: 'What is the venue for FDS-5: Bangkok?',
-            collapsedText: 'Gaysorn Urban Resort, 127 Gaysorn Tower, 19th-20th Floor, Ratchaprasong Road, Lumphini, Pathum Wan, Bangkok 10330, Thailand. Don’t forget to register to attend. You’ll be able to register at check-in',
+            title: 'What is the venue for FDS-6: Toronto?',
+            collapsedText: 'Venue details will be revealed soon.',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
         ],
@@ -229,7 +229,7 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
             id: 'media',
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'Is there a cost to attend?',
-            collapsedText: `Yes. Check out the [registration page](https://lu.ma/vcdjb8pl) for further details.`,
+            collapsedText: `Yes. Check out the [registration page](https://lu.ma/eyk46hz0) for further details.`,
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
@@ -237,7 +237,7 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'How can I sponsor? What does it include?',
             collapsedText:
-              'We offer multiple levels of sponsorship. Please fill out our [sponsor form](https://airtable.com/appKIjmahritzRPpv/pagXT2hdMoid8mtIv/form).',
+              'We offer multiple levels of sponsorship. Please fill out our [sponsor form](https://airtable.com/appqAJpfFCFbm8EaS/pagDLskiazFVVDitS/form).',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
@@ -306,7 +306,7 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_NAVIGATION_CONTENT = {
       text: 'Register to Attend',
       buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
       textColor: 'white',
-      href: 'https://www.fildev.io/',
+      href: 'https://lu.ma/eyk46hz0',
       target: '_blank',
     },
   ],
