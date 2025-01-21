@@ -58,7 +58,7 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
             backgroundColor: 'white',
             textColor: 'black',
             price: '',
-            name: 'Scholars',
+            name: 'Hosted Builders',
             description:
               'This program is designed to provide opportunities for individuals from underrepresented communities, unique circumstances, or developing areas to participate in FIL Dev Summit.',
             cta: {
@@ -66,8 +66,8 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
               buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
               textColor: 'white',
               target: '_blank',
-              text: 'Scholar Application',
-              link: 'https://airtable.com/appqAJpfFCFbm8EaS/pagtOLeqCREvzwjkH/form',
+              text: 'Hosted Builder Application',
+              link: 'https://airtable.com/appqAJpfFCFbm8EaS/shrx8tm7L0yj4lAfB',
             },
           },          
         ],
@@ -211,7 +211,7 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
           {
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'How can I participate at FIL Dev Summit?',
-            collapsedText: `Tickets are available now! Reserve your spot soon as spaces are limited! [Register here](https://lu.ma/eyk46hz0)</br></br>We also offer multiple levels of sponsorship. Please fill out our [sponsor form](https://airtable.com/appqAJpfFCFbm8EaS/pagDLskiazFVVDitS/form) for more information on what is included in each sponsorship.</br></br>Our Scholars program is designed to provide opportunities for individuals from underrepresented communities, unique circumstances, or developing areas to participate in FIL Dev Summit. [Submit your scholar application](https://airtable.com/appqAJpfFCFbm8EaS/pagtOLeqCREvzwjkH/form)</br></br>Finally, add the slack channel: #fil-dev-summit in [Filecoin Slack](https://filecoinproject.slack.com/archives/C05LHC1ULG1).`,
+            collapsedText: `Tickets are available now! Reserve your spot soon as spaces are limited! [Register here](https://lu.ma/eyk46hz0)</br></br>We also offer multiple levels of sponsorship. Please fill out our [sponsor form](https://airtable.com/appqAJpfFCFbm8EaS/pagDLskiazFVVDitS/form) for more information on what is included in each sponsorship.</br></br>Our Hosted Builders program is designed to provide opportunities for individuals from underrepresented communities, unique circumstances, or developing areas to participate in FIL Dev Summit. [Submit your Hosted Builder application](https://airtable.com/appqAJpfFCFbm8EaS/shrx8tm7L0yj4lAfB)</br></br>Finally, add the slack channel: #fil-dev-summit in [Filecoin Slack](https://filecoinproject.slack.com/archives/C05LHC1ULG1).`,
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
