@@ -18,6 +18,7 @@ export const airtableFormattedFieldsMap = {
   'Video Status/Comment': 'videoStatus',
   'Video Status / Comment': 'videoStatus',
   'Video Status': 'videoStatus',
+  'IRL/Virtual': 'irlVirtual',
 
   // talk details
   'Talk Description': 'desc',
@@ -441,8 +442,8 @@ export function ensureMinimumEntries(calendarData, firstPlaceholderText, lastPla
   //if (totalItems < 4) {
   //  const itemsToAdd = 4 - totalItems;  
   
-  if (totalItems < 4) {
-    const itemsToAdd = 3 - totalItems;
+  if (totalItems < 3) {
+    const itemsToAdd = 2 - totalItems;
     const modifiedCalendarData = {};
 
     // Determine how many placeholders to add at the start and end

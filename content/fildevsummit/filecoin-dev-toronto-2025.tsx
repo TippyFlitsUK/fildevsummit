@@ -23,6 +23,13 @@ export const FIL_DEV_SUMMIT_TORONTO = {
   },
 };
 
+export const FIL_DEV_SUMMIT_TORONTO_SPEAKERS = {
+  airtable: {
+    endPoint: 'airtable/toronto-speakers',
+    data: [],
+  },
+};
+
 export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
   {
     id: 'tickets',
@@ -155,37 +162,77 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
       },
     ],
   },
-  {
-    id: 'schedule-toronto',
-    direction: BlockDirectionEnum.COLUMN,
-    title: 'Event Schedule',
-    description: '',
-    cta: {
-      type: CallToActionVariantEnum.BORDER,
-      textColor: 'var(--color-blue)',
-      target: '_blank',
-      text: 'View the Schedule in a List',
-      buttonColor: 'white',
-      link: '/FDS-6/list',
-    },
-    cta2: {
-      type: CallToActionVariantEnum.BUTTON,
-      textColor: 'white',
-      target: '_blank',
-      text: 'Submit a Talk for FDS-6: Toronto',
-      buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
-      link: 'https://airtable.com/appqAJpfFCFbm8EaS/shrOwersC8vPKU0fE',
-    },
-    
-
-    block: [
-      {
-        type: BlockTypeEnum.SCHEDULE_TORONTO,
-        scheduleData: FIL_DEV_SUMMIT_TORONTO,
-      },
-    ],
+{
+  id: 'schedule-toronto-virtual',
+  direction: BlockDirectionEnum.COLUMN,
+  title: 'Virtual Event Schedule',
+  description: 'Sessions available for virtual participation',
+  // Add these CTA buttons:
+  cta: {
+    type: CallToActionVariantEnum.BORDER,
+    textColor: 'var(--color-blue)',
+    target: '_blank',
+    text: 'View the Schedule in a List',
+    buttonColor: 'white',
+    link: '/FDS-6/list',
   },
-
+  cta2: {
+    type: CallToActionVariantEnum.BUTTON,
+    textColor: 'white',
+    target: '_blank',
+    text: 'Submit a Talk for FDS-6: Toronto',
+    buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+    link: 'https://airtable.com/appqAJpfFCFbm8EaS/shrOwersC8vPKU0fE',
+  },
+  block: [
+    {
+      type: BlockTypeEnum.SCHEDULE_TORONTO,
+      scheduleData: FIL_DEV_SUMMIT_TORONTO,
+      capacityFilter: 'Virtual',
+    },
+  ],
+},
+{
+  id: 'schedule-toronto',
+  direction: BlockDirectionEnum.COLUMN,
+  title: 'In-Person Event Schedule', 
+  description: 'Sessions taking place at the venue',
+  cta: {
+    type: CallToActionVariantEnum.BORDER,
+    textColor: 'var(--color-blue)',
+    target: '_blank',
+    text: 'View the Schedule in a List',
+    buttonColor: 'white',
+    link: '/FDS-6/list',
+  },
+  cta2: {
+    type: CallToActionVariantEnum.BUTTON,
+    textColor: 'white',
+    target: '_blank',
+    text: 'Submit a Talk for FDS-6: Toronto',
+    buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+    link: 'https://airtable.com/appqAJpfFCFbm8EaS/shrOwersC8vPKU0fE',
+  },
+  block: [
+    {
+      type: BlockTypeEnum.SCHEDULE_TORONTO,
+      scheduleData: FIL_DEV_SUMMIT_TORONTO,
+      capacityFilter: 'In-Person',  // Changed from 'Virtual' to 'In-Person'
+    },
+  ],
+},
+{
+  id: 'speakers-toronto',
+  direction: BlockDirectionEnum.COLUMN,
+  title: 'Event Speakers',
+  description: 'Featured speakers at FDS-6: Toronto',
+  block: [
+    {
+      type: BlockTypeEnum.SPEAKERS_TORONTO,
+      speakersData: FIL_DEV_SUMMIT_TORONTO_SPEAKERS,
+    },
+  ],
+},
   {
     id: 'faqs',
     title: 'FAQs',

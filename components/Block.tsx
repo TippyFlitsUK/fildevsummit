@@ -23,6 +23,7 @@ import ScheduleListByTrack from './ScheduleListByTrack';
 import ScheduleListByTalks from './ScheduleListByTalks';
 import ScheduleListToggleByTimeOrTrack from './ScheduleListToggle';
 import EventsRow from './EventsRow';
+import SpeakersToronto from './SpeakersToronto';
 
 export function Block({ block }) {
   switch (block.type) {
@@ -57,7 +58,9 @@ export function Block({ block }) {
     case (block.type = BlockTypeEnum.SCHEDULE_BANGKOK):
       return <ScheduleBangkok {...block} />;   
     case (block.type = BlockTypeEnum.SCHEDULE_TORONTO):
-      return <ScheduleToronto {...block} />;                
+      return <ScheduleToronto {...block} />;
+    case (block.type = BlockTypeEnum.SPEAKERS_TORONTO):
+      return <SpeakersToronto {...block} />;                  
     case (block.type = BlockTypeEnum.SCHEDULE_LIST_BY_TRACK_ICELAND):
       return <ScheduleListByTrack {...block} />;
     case (block.type = BlockTypeEnum.SCHEDULE_LIST_BY_TALK_ICELAND):

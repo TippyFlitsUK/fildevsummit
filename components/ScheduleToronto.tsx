@@ -9,22 +9,41 @@ const IS_PRODUCTION = NODE === 'production';
 if (!IS_PRODUCTION) {
   require('dotenv').config();
 }
-export default function SCHEDULE_TORONTO({ scheduleData }) {
+export default function SCHEDULE_TORONTO({ scheduleData, capacityFilter = null }) {
+  // Add capacityFilter with a default value of null
   const [torontoData, setTorontoData] = useState<any[] | null>(null);
   const [speakers, setSpeakers] = useState<any[]>([]);
   const [isExpanded, setIsExpanded] = useState(false);
-  useEffect(() => {
-    if (scheduleData?.airtable) {
-      const organizeData = async () => {
-        const formattedAirtableData = formatAirtableMetaData(scheduleData?.airtable?.data);
-        const fetchedSpeakers = getSpeakers(formattedAirtableData);
-        const uniqueSpeakers = fetchedSpeakers.filter((speaker, index, self) => index === self.findIndex(s => s.fullName === speaker.fullName));
-        setTorontoData(formattedAirtableData);
-        setSpeakers(uniqueSpeakers);
-      };
-      organizeData();
-    }
-  }, [scheduleData]);
+  
+
+useEffect(() => {
+  if (scheduleData?.airtable) {
+    const organizeData = async () => {
+      const formattedAirtableData = formatAirtableMetaData(scheduleData?.airtable?.data);
+      
+      // Filter based on 'IRL/Virtual' field
+      let filteredData: any[] = [];
+      
+      // Add null check before filtering
+      if (formattedAirtableData) {
+        if (capacityFilter === 'Virtual') {
+          filteredData = formattedAirtableData.filter(item => item.irlVirtual === 'Virtual');
+        } else {
+          filteredData = formattedAirtableData.filter(item => item.irlVirtual !== 'Virtual');
+        }
+      }
+      
+      // Rest of your existing code
+      const fetchedSpeakers = getSpeakers(filteredData);
+      setTorontoData(filteredData);
+      setSpeakers(fetchedSpeakers.filter((speaker, index, self) => 
+        index === self.findIndex(s => s.fullName === speaker.fullName)
+      ));
+    };
+    organizeData();
+  }
+}, [scheduleData, capacityFilter]);
+
   const toggleExpandCollapse = () => {
     setIsExpanded(!isExpanded);
   };
@@ -40,37 +59,40 @@ export default function SCHEDULE_TORONTO({ scheduleData }) {
   const ensuredCalendarData = ensureMinimumEntries(calendarData, startPlaceholder, endPlaceholder);
   // console.log(ensuredCalendarData, 'calendar dataaa');
   return (
-    <>
-      <div style={{ paddingBottom: '2rem', display: 'grid', rowGap: '3rem' }}>
-        {/* <div onClick={toggleExpandCollapse} className={styles.scheduleToggle}>
-          <p>View Full Schedule & Event Speakers</p>
-          <button aria-label="View Full Schedule" onClick={toggleExpandCollapse} className={styles.expandCollapseButton}>
-            <div className={isExpanded ? styles.arrowUp : styles.arrowDown}></div>
-          </button>
-        </div> */}
-        <Schedule calendarData={ensuredCalendarData} scheduleId={'schedule-toronto'} />
-        {/*expand after the event is over! {isExpanded && calendarData && <Schedule calendarData={calendarData} scheduleId={'schedule-toronto'} />} */}
-        {/* {isExpanded && submitTrack?.url && (
-          <a href={submitTrack.url} className={styles.link} target="_blank">
-            <section className={styles.callToAction}>
-              <div className={styles.callToActionTextContainer}>
-                <p className={styles.plusIcon}>+</p>
-                <p className={styles.callToActionText}>{submitTrack.text}</p>
-              </div>
-            </section>
-          </a>
-        )} */}
+  <>
+    <div style={{ paddingBottom: '2rem', display: 'grid', rowGap: '3rem' }}>
+      {/* <div onClick={toggleExpandCollapse} className={styles.scheduleToggle}>
+        <p>View Full Schedule & Event Speakers</p>
+        <button aria-label="View Full Schedule" onClick={toggleExpandCollapse} className={styles.expandCollapseButton}>
+          <div className={isExpanded ? styles.arrowUp : styles.arrowDown}></div>
+        </button>
+      </div> */}
+      <Schedule calendarData={ensuredCalendarData} scheduleId={'schedule-toronto'} />
+      {/*expand after the event is over! {isExpanded && calendarData && <Schedule calendarData={calendarData} scheduleId={'schedule-toronto'} />} */}
+      {/* {isExpanded && submitTrack?.url && (
+        <a href={submitTrack.url} className={styles.link} target="_blank">
+          <section className={styles.callToAction}>
+            <div className={styles.callToActionTextContainer}>
+              <p className={styles.plusIcon}>+</p>
+              <p className={styles.callToActionText}>{submitTrack.text}</p>
+            </div>
+          </section>
+        </a>
+      )} */}
+      
+      {/* Delete this speakers section */}
+      {/* <div style={{ display: 'grid', rowGap: '2rem' }}>
+        <h1 style={{ fontSize: 'var(--font-size-large)', fontWeight: 'var(--font-weight-light' }}> Speakers</h1>
+        <Speakers speakers={speakers} />
+      </div> */}
+      
+      {/* {isExpanded && speakers.length > 0 && (
         <div style={{ display: 'grid', rowGap: '2rem' }}>
           <h1 style={{ fontSize: 'var(--font-size-large)', fontWeight: 'var(--font-weight-light' }}> Speakers</h1>
           <Speakers speakers={speakers} />
         </div>
-        {/* {isExpanded && speakers.length > 0 && (
-          <div style={{ display: 'grid', rowGap: '2rem' }}>
-            <h1 style={{ fontSize: 'var(--font-size-large)', fontWeight: 'var(--font-weight-light' }}> Speakers</h1>
-            <Speakers speakers={speakers} />
-          </div>
-        )} */}
-      </div>
-    </>
-  );
+      )} */}
+    </div>
+  </>
+);
 }
