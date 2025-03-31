@@ -77,24 +77,26 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
               link: 'https://lu.ma/eyk46hz0',
             },
           },     
-          {
-            id: 'media',
-            type: BlockTypeEnum.TICKET_CARD,
-            backgroundColor: 'white',
-            textColor: 'black',
-            price: '',
-            name: 'Hosted Builders',
-            description:
-              'This program is designed to provide opportunities for individuals from underrepresented communities, unique circumstances, or developing areas to participate in FIL Dev Summit.',
-            cta: {
-              type: CallToActionVariantEnum.BORDER,
-              buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
-              textColor: 'white',
-              target: '_blank',
-              text: 'Hosted Builder Application',
-              link: 'https://airtable.com/appqAJpfFCFbm8EaS/shrx8tm7L0yj4lAfB',
-            },
-          },          
+
+//          {
+//            id: 'media',
+//            type: BlockTypeEnum.TICKET_CARD,
+//            backgroundColor: 'white',
+//            textColor: 'black',
+//            price: '',
+//            name: 'Hosted Builders',
+//            description:
+//              'This program is designed to provide opportunities for individuals from underrepresented communities, unique circumstances, or developing areas to participate in FIL Dev Summit.',
+//            cta: {
+//              type: CallToActionVariantEnum.BORDER,
+//              buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+//              textColor: 'white',
+//              target: '_blank',
+//              text: 'Hosted Builder Application',
+//              link: 'https://airtable.com/appqAJpfFCFbm8EaS/shrx8tm7L0yj4lAfB',
+//            },
+//          },   
+                 
         ],
       },
     ],
