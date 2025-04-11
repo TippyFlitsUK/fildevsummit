@@ -552,7 +552,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             id: 'media',
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'Is there a cost to attend?',
-            collapsedText: `Please refer to the event page and [this form to apply to attend](https://lu.ma/eyk46hz0).`,
+            collapsedText: `Please refer to the event page.`,
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
@@ -651,7 +651,7 @@ export const FILECOIN_DEV_SUMMIT_NAVIGATION_CONTENT = {
       text: 'Apply to Attend',
       buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
       textColor: 'white',
-      href: 'https://lu.ma/eyk46hz0',
+      href: 'https://www.fildev.io/FDS-6',
       target: '_blank',
     },
   ],
