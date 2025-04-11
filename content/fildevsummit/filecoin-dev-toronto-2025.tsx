@@ -278,7 +278,7 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
           {
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'How can I participate at FIL Dev Summit?',
-            collapsedText: `Tickets are available now! Reserve your spot soon as spaces are limited! [Register here](https://lu.ma/eyk46hz0)</br></br>We also offer multiple levels of sponsorship. Please fill out our [sponsor form](https://airtable.com/appqAJpfFCFbm8EaS/pagDLskiazFVVDitS/form) for more information on what is included in each sponsorship.</br></br>Our Hosted Builders program is designed to provide opportunities for individuals from underrepresented communities, unique circumstances, or developing areas to participate in FIL Dev Summit. [Submit your Hosted Builder application](https://airtable.com/appqAJpfFCFbm8EaS/shrx8tm7L0yj4lAfB)</br></br>Finally, add the slack channel: #fil-dev-summit in [Filecoin Slack](https://filecoinproject.slack.com/archives/C05LHC1ULG1).`,
+            collapsedText: `Tickets are available now! Reserve your spot soon as spaces are limited!</br></br>We also offer multiple levels of sponsorship. Please fill out our [sponsor form](https://airtable.com/appqAJpfFCFbm8EaS/pagDLskiazFVVDitS/form) for more information on what is included in each sponsorship.</br></br>Our Hosted Builders program is designed to provide opportunities for individuals from underrepresented communities, unique circumstances, or developing areas to participate in FIL Dev Summit. [Submit your Hosted Builder application](https://airtable.com/appqAJpfFCFbm8EaS/shrx8tm7L0yj4lAfB)</br></br>Finally, add the slack channel: #fil-dev-summit in [Filecoin Slack](https://filecoinproject.slack.com/archives/C05LHC1ULG1).`,
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
@@ -296,7 +296,7 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
             id: 'media',
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'Is there a cost to attend?',
-            collapsedText: `Yes. Check out the [registration page](https://lu.ma/eyk46hz0) for further details.`,
+            collapsedText: `Yes. Check out the registration pang for further details.`,
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
@@ -373,7 +373,7 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_NAVIGATION_CONTENT = {
       text: 'Register to Attend',
       buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
       textColor: 'white',
-      href: 'https://lu.ma/eyk46hz0',
+      href: 'https://www.fildev.io/FDS-6',
       target: '_blank',
     },
   ],
