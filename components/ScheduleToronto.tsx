@@ -27,9 +27,15 @@ useEffect(() => {
       // Add null check before filtering
       if (formattedAirtableData) {
         if (capacityFilter === 'Virtual') {
-          filteredData = formattedAirtableData.filter(item => item.irlVirtual === 'Virtual');
+          // Include both "Virtual" and "Pre-Record" in the Virtual Schedule
+          filteredData = formattedAirtableData.filter(item => 
+            item.irlVirtual === 'Virtual' || item.irlVirtual === 'Pre-Record'
+          );
         } else {
-          filteredData = formattedAirtableData.filter(item => item.irlVirtual !== 'Virtual');
+          // For In-Person, exclude both "Virtual" and "Pre-Record"
+          filteredData = formattedAirtableData.filter(item => 
+            item.irlVirtual !== 'Virtual' && item.irlVirtual !== 'Pre-Record'
+          );
         }
       }
       
