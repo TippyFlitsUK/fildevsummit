@@ -208,7 +208,7 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
     {
       type: BlockTypeEnum.SCHEDULE_TORONTO,
       scheduleData: FIL_DEV_SUMMIT_TORONTO,
-      capacityFilter: 'Virtual',
+      capacityFilter: 'In-Person',
     },
   ],
 },
@@ -237,7 +237,7 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
     {
       type: BlockTypeEnum.SCHEDULE_TORONTO,
       scheduleData: FIL_DEV_SUMMIT_TORONTO,
-      capacityFilter: 'In-Person',  // Changed from 'Virtual' to 'In-Person'
+      capacityFilter: 'Virtual',  // Changed from 'Virtual' to 'In-Person'
     },
   ],
 },
