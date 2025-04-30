@@ -5,7 +5,7 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_HERO_CONTENT = {
   type: BlockTypeEnum.HERO_NO_BACKGROUND,
   title: 'FDS-6: Toronto',
   description:
-    "FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!). This summit is more than just a meetup—it's a place for meaningful and impactful conversations that help push Filecoin forward. <br> <br>This event takes place on May 12th to 13th, 2025.",
+    "FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!). This summit is more than just a meetup—it's a place for meaningful and impactful conversations that help push Filecoin forward. <br> <br>This event takes place on May 12th to 13th, 2025, at <a href='https://maps.app.goo.gl/S6TNNbjKc5PUTR2J8' target='_blank'>MaRS Center</a>.",
 };
 //  description:
 //    "FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!). This summit is more than //just a meetup—it's a place for meaningful and impactful conversations that help push Filecoin forward. <br> <br>This event takes place on November 6th to 8th, 2024, at the <a href='https://www.google.com/maps?sca_esv=64f7be2b9ddec3ab&biw=1512&bih=767&output=search&q=Gaysorn+Urban+resort+bangkok&source=lnms&entry=mc&ved=1t:200715&ictx=111' target='_blank'>Gaysorn Urban Resort</a>.",
@@ -126,14 +126,14 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
             src: '/media/ff-logo2.png',
             href: 'https://fil.org',
           },
-//          {
-//            src: '/media/LWWeb3.png',
-//            href: 'https://24.labweek.io/24-web3',
-//          },   
-//          {
-//            src: '/media/boosty.png',
-//            href: 'https://boostylabs.com/',
-//          },
+          {
+            src: '/media/glif-long.png',
+            href: 'https://www.glif.io/en',
+          },          
+          {
+            src: '/media/secured.png',
+            href: 'https://secured.finance/',
+          },
         ],
       },
 //      {
