@@ -517,7 +517,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'What are the venues for FIL Dev Summit?',
             collapsedText:
-              'Logistical details will be sent to you once your application has been received, approved, and you have completed the registration for this event by purchasing a ticket.',
+              'Logistical details will be sent to you once your application has been received, approved, and you have completed the registration for this event by purchasing a ticket. The FDS Toronto event takes place on May 12th to 13th, 2025, at [MaRS Center](https://maps.app.goo.gl/S6TNNbjKc5PUTR2J8).',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           // {

@@ -284,7 +284,7 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
           {
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'What is the venue for FDS-6: Toronto?',
-            collapsedText: 'Venue details will be revealed soon.',
+            collapsedText: 'The FDS Toronto event takes place on May 12th to 13th, 2025, at [MaRS Center](https://maps.app.goo.gl/S6TNNbjKc5PUTR2J8).',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
         ],
