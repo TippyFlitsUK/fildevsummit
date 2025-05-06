@@ -144,7 +144,7 @@ export default function Schedule({ calendarData, scheduleId }) {
                             {roomName && <p className={styles.location}>{roomName}</p>}
                             {firstName && <p className={styles.speakers}> {firstName}</p>}
                             {fullName && <p className={styles.speakers}> {fullName}</p>}
-                            <p className={styles.people}>👤 {capacity ?? '50 seats'}</p>
+                            {capacity && <p className={styles.people}>👤 {capacity}</p>}
                           </div>
                         </div>
                       );

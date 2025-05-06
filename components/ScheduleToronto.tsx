@@ -27,15 +27,21 @@ useEffect(() => {
       // Add null check before filtering
       if (formattedAirtableData) {
         if (capacityFilter === 'Virtual') {
-          // Include both "Virtual" and "Pre-Record" in the Virtual Schedule
-          filteredData = formattedAirtableData.filter(item => 
-            item.irlVirtual === 'Virtual' || item.irlVirtual === 'Pre-Record'
-          );
+          // Handle array values - check if the array contains 'Virtual' or 'Pre-Record'
+          filteredData = formattedAirtableData.filter(item => {
+            if (Array.isArray(item.irlVirtual)) {
+              return item.irlVirtual.includes('Virtual') || item.irlVirtual.includes('Pre-Record');
+            }
+            return false; // Not an array or doesn't contain the values
+          });
         } else {
-          // For In-Person, exclude both "Virtual" and "Pre-Record"
-          filteredData = formattedAirtableData.filter(item => 
-            item.irlVirtual !== 'Virtual' && item.irlVirtual !== 'Pre-Record'
-          );
+          // Handle array values - check if the array contains 'In Person'
+          filteredData = formattedAirtableData.filter(item => {
+            if (Array.isArray(item.irlVirtual)) {
+              return item.irlVirtual.includes('In Person');
+            }
+            return false; // Not an array or doesn't contain 'In Person'
+          });
         }
       }
       
@@ -63,41 +69,11 @@ useEffect(() => {
   const startPlaceholder = 'Mon, May 12';
   const endPlaceholder = 'Tues, May 13';
   const ensuredCalendarData = ensureMinimumEntries(calendarData, startPlaceholder, endPlaceholder);
-  // console.log(ensuredCalendarData, 'calendar dataaa');
+  
   return (
   <>
     <div style={{ paddingBottom: '2rem', display: 'grid', rowGap: '3rem' }}>
-      {/* <div onClick={toggleExpandCollapse} className={styles.scheduleToggle}>
-        <p>View Full Schedule & Event Speakers</p>
-        <button aria-label="View Full Schedule" onClick={toggleExpandCollapse} className={styles.expandCollapseButton}>
-          <div className={isExpanded ? styles.arrowUp : styles.arrowDown}></div>
-        </button>
-      </div> */}
       <Schedule calendarData={ensuredCalendarData} scheduleId={'schedule-toronto'} />
-      {/*expand after the event is over! {isExpanded && calendarData && <Schedule calendarData={calendarData} scheduleId={'schedule-toronto'} />} */}
-      {/* {isExpanded && submitTrack?.url && (
-        <a href={submitTrack.url} className={styles.link} target="_blank">
-          <section className={styles.callToAction}>
-            <div className={styles.callToActionTextContainer}>
-              <p className={styles.plusIcon}>+</p>
-              <p className={styles.callToActionText}>{submitTrack.text}</p>
-            </div>
-          </section>
-        </a>
-      )} */}
-      
-      {/* Delete this speakers section */}
-      {/* <div style={{ display: 'grid', rowGap: '2rem' }}>
-        <h1 style={{ fontSize: 'var(--font-size-large)', fontWeight: 'var(--font-weight-light' }}> Speakers</h1>
-        <Speakers speakers={speakers} />
-      </div> */}
-      
-      {/* {isExpanded && speakers.length > 0 && (
-        <div style={{ display: 'grid', rowGap: '2rem' }}>
-          <h1 style={{ fontSize: 'var(--font-size-large)', fontWeight: 'var(--font-weight-light' }}> Speakers</h1>
-          <Speakers speakers={speakers} />
-        </div>
-      )} */}
     </div>
   </>
 );
