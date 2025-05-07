@@ -134,6 +134,14 @@ export const FILECOIN_DEV_SUMMIT_TORONTO_2025_PAGE_CONTENT = [
             src: '/media/secured.png',
             href: 'https://secured.finance/',
           },
+          {
+            src: '/media/ICN.png',
+            href: 'https://www.icn.global/',
+          },
+          {
+            src: '/media/Vana.png',
+            href: 'https://www.vana.org/',
+          },                    
         ],
       },
 //      {
