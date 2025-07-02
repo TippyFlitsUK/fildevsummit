@@ -75,11 +75,11 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             type: BlockTypeEnum.MEDIA,
             media: {
               type: TypeName.IMAGE_WITH_OVERLAY_TEXT,
-              src: '/media/Toronto-3.jpg',
-              ariaLabel: 'FDS-6: Toronto',
-              link: '/FDS-6',
-              title: 'FDS-6: Toronto',
-              subtitle: 'May 12-13, 2025',
+              src: '/media/ba5.jpg',
+              ariaLabel: 'FDS-7: Buenos Aires',
+              link: '/',
+              title: 'FDS-7: Buenos Aires',
+              subtitle: 'November 13-15, 2025',
               rightSubheading: 'Organized by FilOz & Filecoin Foundation',
             },
           },
@@ -98,6 +98,19 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
         id: 'past-events',
         type: BlockTypeEnum.MEDIA_GRID,
         media: [
+           {
+            id: 'past-events',
+            type: BlockTypeEnum.MEDIA,
+            media: {
+              type: TypeName.IMAGE_WITH_OVERLAY_TEXT,
+              src: '/media/Toronto-3.jpg',
+              ariaLabel: 'FDS-6: Toronto',
+              link: '/FDS-6',
+              title: 'FDS-6: Toronto',
+              subtitle: 'May 12-13, 2025',
+              rightSubheading: 'Organized by FilOz & Filecoin Foundation',
+            },
+          },               
            {
             id: 'past-events',
             type: BlockTypeEnum.MEDIA,
