@@ -1,0 +1,357 @@
+import { BlockDirectionEnum, BlockTypeEnum as BTE, CallToActionVariantEnum, NavigationTypeEnum, Ratio, TypeName } from '@root/common/types';
+
+// Extend the BlockTypeEnum with Buenos Aires specific types
+const BlockTypeEnum = {
+  ...BTE,
+  SCHEDULE_BUENOS_AIRES: 'SCHEDULE_BUENOS_AIRES',
+  SPEAKERS_BUENOS_AIRES: 'SPEAKERS_BUENOS_AIRES',
+};
+
+export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_HERO_CONTENT = {
+  id: 'hero',
+  type: BlockTypeEnum.HERO_NO_BACKGROUND,
+  title: 'FDS-7: Buenos Aires',
+  description:
+    "FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!). This summit is more than just a meetup—it's a place for meaningful and impactful conversations that help push Filecoin forward. <br> <br>This event takes place on November 13th to 15th, 2025, in Buenos Aires.",
+};
+
+export const FILECOIN_DEV_SUMMIT_PAGE_STYLE_CONTENT = {
+  backgroundColor: 'var(--color-white)',
+  textColor: 'var(--color-black)',
+};
+
+export const FIL_DEV_SUMMIT_BUENOS_AIRES = {
+  airtable: {
+    endPoint: 'airtable/buenos-aires',
+    data: [],
+  },
+};
+
+export const FIL_DEV_SUMMIT_BUENOS_AIRES_SPEAKERS = {
+  airtable: {
+    endPoint: 'airtable/buenos-aires-speakers',
+    data: [],
+  },
+};
+
+export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
+  {
+    id: 'tickets',
+    title: 'Register to Attend',
+    direction: 'row',
+    block: [
+      {
+        type: BlockTypeEnum.TICKET_CARD,
+        backgroundColor: 'white',
+        textColor: 'black',
+        tickets: [
+          {
+            id: 'media',
+            type: BlockTypeEnum.TICKET_CARD,
+            price: 'TBD',
+            name: 'FDS-7: Buenos Aires - Virtual Sessions',
+            backgroundColor: 'white',
+            textColor: 'black',
+            description: '</br></br>Register for FDS-7: Buenos Aires virtual sessions',
+            cta: {
+              type: CallToActionVariantEnum.DISABLED,
+              target: '_blank',
+              buttonColor: '#ccc',
+              textColor: '#999',
+              text: 'Register',
+              link: '#',
+            },
+          },              
+          {
+            id: 'media',
+            type: BlockTypeEnum.TICKET_CARD,
+            price: 'TBD',
+            name: 'FDS-7: Buenos Aires - In-Person Sessions',
+            backgroundColor: 'white',
+            textColor: 'black',
+            description: '</br></br>Register for FDS-7: Buenos Aires in-person sessions',
+            cta: {
+              type: CallToActionVariantEnum.DISABLED,
+              target: '_blank',
+              buttonColor: '#ccc',
+              textColor: '#999',
+              text: 'Register',
+              link: '#',
+            },
+          },     
+        ],
+      },
+    ],
+  },
+  {
+    id: '2',
+    subtitle: 'Sponsors',
+    direction: BlockDirectionEnum.COLUMN,
+    cta: {
+      type: CallToActionVariantEnum.DISABLED,
+      target: '_blank',
+      buttonColor: '#ccc',
+      textColor: '#999',
+      text: 'Sponsor FDS-7: Buenos Aires',
+      link: '#',
+    },
+    block: [
+      {
+        id: 'participating-teams-row1',
+        type: BlockTypeEnum.LOGO_GRID,
+        logosLarge: [
+          {
+            src: '/media/protocollabs.png',
+            href: 'https://protocol.ai',
+          },
+          {
+            src: '/media/ff-logo2.png',
+            href: 'https://fil.org',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'buenos-aires',
+    backgroundColor: 'var(--color-white)',
+    direction: BlockDirectionEnum.COLUMN,
+    noGutter: 'no',
+    block: [
+      {
+        id: 'media',
+        type: BlockTypeEnum.MEDIA,
+        media: {
+          type: BlockTypeEnum.IMAGE_TEXT_WITH_OVERFLOW,
+          heading: 'FDS-7: Buenos Aires',
+          description: 'November 13-15, 2025',
+          smallDesc: 'Organized by FilOz & Filecoin Foundation',
+          image: {
+            alt: 'buenos-aires-fil-dev-summit',
+            src: '/media/ba5.jpg',
+          },
+        },
+      },
+    ],
+  },
+{
+  id: 'schedule-buenos-aires-virtual',
+  direction: BlockDirectionEnum.COLUMN,
+  title: 'Virtual Event Schedule',
+  description: 'Sessions available for virtual participation',
+  cta: {
+    type: CallToActionVariantEnum.BORDER,
+    textColor: 'var(--color-blue)',
+    target: '_blank',
+    text: 'View the Schedule in a List',
+    buttonColor: 'white',
+    link: '#',
+    title: 'Coming Soon',
+    style: { opacity: '0.6', cursor: 'not-allowed' },
+  },
+  cta2: {
+    type: CallToActionVariantEnum.DISABLED,
+    textColor: '#999',
+    target: '_blank',
+    text: 'Submit a Talk for FDS-7: Buenos Aires',
+    buttonColor: '#ccc',
+    link: '#',
+    style: { opacity: '0.5', cursor: 'not-allowed' },
+    title: 'Coming Soon',
+  },
+  block: [
+    {
+      type: BlockTypeEnum.TEXT,
+      bigTitle: 'Coming Soon...',
+      style: { textAlign: 'center', padding: '3rem', fontSize: '1.5rem', color: '#999' },
+    },
+  ],
+},
+{
+  id: 'schedule-buenos-aires',
+  direction: BlockDirectionEnum.COLUMN,
+  title: 'In-Person Event Schedule', 
+  description: 'Sessions taking place at the venue',
+  cta: {
+    type: CallToActionVariantEnum.BORDER,
+    textColor: 'var(--color-blue)',
+    target: '_blank',
+    text: 'View the Schedule in a List',
+    buttonColor: 'white',
+    link: '#',
+    title: 'Coming Soon',
+    style: { opacity: '0.6', cursor: 'not-allowed' },
+  },
+  cta2: {
+    type: CallToActionVariantEnum.DISABLED,
+    textColor: '#999',
+    target: '_blank',
+    text: 'Submit a Talk for FDS-7: Buenos Aires',
+    buttonColor: '#ccc',
+    link: '#',
+    style: { opacity: '0.5', cursor: 'not-allowed' },
+    title: 'Coming Soon',
+  },
+  block: [
+    {
+      type: BlockTypeEnum.TEXT,
+      bigTitle: 'Coming Soon...',
+      style: { textAlign: 'center', padding: '3rem', fontSize: '1.5rem', color: '#999' },
+    },
+  ],
+},
+{
+  id: 'speakers-buenos-aires',
+  direction: BlockDirectionEnum.COLUMN,
+  title: 'Event Speakers',
+  description: 'Featured speakers at FDS-7: Buenos Aires',
+  block: [
+    {
+      type: BlockTypeEnum.TEXT,
+      bigTitle: 'Coming Soon...',
+      style: { textAlign: 'center', padding: '3rem', fontSize: '1.5rem', color: '#999' },
+    },
+  ],
+},
+  {
+    id: 'faqs',
+    title: 'FAQs',
+    direction: BlockDirectionEnum.TWO_COLUMN,
+    block: [
+      {
+        type: BlockTypeEnum.COLLAPSABLES,
+        collapsables: [
+          {
+            type: BlockTypeEnum.COLLAPSABLE,
+            title: 'What is FDS-7: Buenos Aires 2025?',
+            collapsedText:
+              'FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!).',
+            backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+          },
+          {
+            type: BlockTypeEnum.COLLAPSABLE,
+            title: 'What is the goal of FIL Dev Summit?',
+            collapsedText:
+              'What do we want to come out of FIL Dev Summit? We want to bring the Filecoin developer community together, have important convos, show how the network is evolving, build collaboration connections between teams, collectively set a roadmap for critical protocol evolutions and extensions for the rest of this year. ',
+            backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+          },
+          {
+            type: BlockTypeEnum.COLLAPSABLE,
+            title: 'How can I participate at FIL Dev Summit?',
+            collapsedText: `Tickets will be available soon! Reserve your spot soon as spaces are limited!</br></br>We also offer multiple levels of sponsorship. Please check back for our sponsor form.</br></br>Finally, add the slack channel: #fil-dev-summit in [Filecoin Slack](https://filecoinproject.slack.com/archives/C05LHC1ULG1).`,
+            backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+          },
+          {
+            type: BlockTypeEnum.COLLAPSABLE,
+            title: 'What is the venue for FDS-7: Buenos Aires?',
+            collapsedText: 'The FDS Buenos Aires event takes place on November 13th to 15th, 2025. Venue details coming soon.',
+            backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+          },
+        ],
+      },
+      {
+        type: BlockTypeEnum.COLLAPSABLES,
+        collapsables: [
+          {
+            id: 'media',
+            type: BlockTypeEnum.COLLAPSABLE,
+            title: 'Is there a cost to attend?',
+            collapsedText: `Event pricing will be announced soon. Check back for registration details.`,
+            backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+          },
+          {
+            id: 'media',
+            type: BlockTypeEnum.COLLAPSABLE,
+            title: 'How can I sponsor? What does it include?',
+            collapsedText:
+              'We offer multiple levels of sponsorship. Sponsor form coming soon.',
+            backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+          },
+          {
+            id: 'media',
+            type: BlockTypeEnum.COLLAPSABLE,
+            title: 'Will the sessions be recorded?',
+            collapsedText:
+              'All sessions will be recorded and uploaded to [Youtube channel](https://www.youtube.com/@FilecoinProject) ASAP. We are also encouraging everyone to join [#fil-dev-summit](https://app.slack.com/client/TEHTVS1L6/C05LHC1ULG1) in [Filecoin](https://filecoinproject.slack.com/ssb/redirect) slack to stay up to date with all hallway track conversations.',
+            backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+          },
+          {
+            id: 'media',
+            type: BlockTypeEnum.COLLAPSABLE,
+            title: 'Code of Conduct',
+            collapsedText: ` We will be following the following [Code of Conduct](https://github.com/filecoin-project/community/blob/master/CODE_OF_CONDUCT.md).`,
+            backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+          },
+        ],
+      },
+    ],
+  },
+];
+
+export const FOOTER_FILECOIN_DEV_SUMMIT_CONTENT = {
+  links: [
+    {
+      href: 'https://discuss.ipfs.tech/privacy',
+      name: 'Privacy Policy',
+    },
+    {
+      href: 'https://discuss.ipfs.tech/tos',
+      name: 'Terms & Conditions',
+    },
+    {
+      href: 'https://ipfs.tech/legal/',
+      name: 'DMCA Policy',
+    },
+  ],
+  source: [
+    {
+      href: 'https://github.com/filecoin-project/lotus',
+    },
+  ],
+};
+
+export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_NAVIGATION_CONTENT = {
+  type: NavigationTypeEnum.WITH_BORDER,
+  backgroundColor: 'var(--color-white)',
+  logo: {
+    src: '/media/fildevsummit-logo.png',
+    altText: 'FIL Dev Summit Logo',
+    link: '/',
+  },
+  navItems: [
+    {
+      name: 'Schedule',
+      href: '#schedule-buenos-aires',
+    },
+    {
+      name: 'FAQs',
+      href: '#faqs',
+    },
+  ],
+  cta: [
+    {
+      text: 'Register to Attend',
+      buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+      textColor: 'white',
+      href: '#',
+      target: '_blank',
+      title: 'Coming Soon',
+      style: { opacity: '0.6', cursor: 'not-allowed' },
+    },
+  ],
+};
+
+export const FDS_7_LIST_CONTENT = [
+  {
+    id: 'buenos-aires',
+    backgroundColor: 'var(--color-white)',
+    direction: BlockDirectionEnum.COLUMN,
+    title: 'FDS-7: Buenos Aires Schedule',
+    block: [
+      {
+        type: BlockTypeEnum.TEXT,
+        paragraph: 'Coming Soon...',
+      },
+    ],
+  },
+];

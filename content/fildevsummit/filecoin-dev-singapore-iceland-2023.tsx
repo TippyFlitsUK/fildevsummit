@@ -77,7 +77,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
               type: TypeName.IMAGE_WITH_OVERLAY_TEXT,
               src: '/media/ba5.jpg',
               ariaLabel: 'FDS-7: Buenos Aires',
-              link: '/',
+              link: '/FDS-7',
               title: 'FDS-7: Buenos Aires',
               subtitle: 'November 13-15, 2025',
               rightSubheading: 'Organized by FilOz & Filecoin Foundation',

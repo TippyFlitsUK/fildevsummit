@@ -2,11 +2,14 @@ import styles from '@components/CallToActionVariant.module.scss';
 
 import { CallToActionVariantEnum } from '@root/common/types';
 import Link from './Link';
+import { DisabledButton } from './DisabledButton';
 
 export function CallToActionVariant({ type, cta }) {
   switch (type) {
     case CallToActionVariantEnum.BUTTON:
       return <Button {...cta} />;
+    case CallToActionVariantEnum.DISABLED:
+      return <DisabledButton {...cta} />;
     case CallToActionVariantEnum.BORDER:
       return (
         <Button
@@ -34,23 +37,27 @@ export function CallToActionVariant({ type, cta }) {
   }
 }
 
-export function Button({ buttonColor, borderColor, className, variant, target, textColor, text, href, link }: any) {
+export function Button({ buttonColor, borderColor, className, variant, target, textColor, text, href, link, title, style }: any) {
   let buttonVariant = styles.button;
 
   if (variant === CallToActionVariantEnum.BORDER) {
     buttonVariant = styles.borderButton;
   }
 
+  const buttonStyle = {
+    background: buttonColor ? buttonColor : 'var(--color-black)',
+    color: textColor ? textColor : 'var(--color-white)',
+    border: `1px solid ${borderColor}`,
+    ...style,
+  };
+
   return (
     <Link className={`${styles.blackLink} ${className}`} href={(href || link) ?? ''} target={target ? target : '_blank'}>
       <button
-        style={{
-          background: buttonColor ? buttonColor : 'var(--color-black)',
-          color: textColor ? textColor : 'var(--color-white)',
-          border: `1px solid ${borderColor}`,
-        }}
+        style={buttonStyle}
         aria-label={text}
         className={buttonVariant}
+        title={title}
       >
         {text}
       </button>

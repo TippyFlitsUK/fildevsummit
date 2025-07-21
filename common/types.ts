@@ -97,6 +97,7 @@ export enum CallToActionVariantEnum {
   BLACK = 'dark-blue',
   BORDER = 'border',
   BUTTON = 'button',
+  DISABLED = 'disabled',
   ICON = 'icon',
   LINK = 'link',
   LINK_ICON = 'link-icon',
