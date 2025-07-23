@@ -52,7 +52,7 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
             name: 'FDS-7: Buenos Aires - Virtual Sessions',
             backgroundColor: 'white',
             textColor: 'black',
-            description: '</br></br>Register for FDS-7: Buenos Aires virtual sessions',
+            description: '</br></br>Register for FDS-7: Buenos Aires virtual sessions</br></br>',
             cta: {
               type: CallToActionVariantEnum.DISABLED,
               target: '_blank',
@@ -65,11 +65,12 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
           {
             id: 'media',
             type: BlockTypeEnum.TICKET_CARD,
-            price: '$20',
+            price: '$20 Early Bird',
+            priceColor: '#8B0000',
             name: 'FDS-7: Buenos Aires - In-Person Sessions',
             backgroundColor: 'white',
             textColor: 'black',
-            description: '</br></br>Register for FDS-7: Buenos Aires in-person sessions',
+            description: '</br></br>Register for FDS-7: Buenos Aires in-person sessions - Early bird pricing available for a limited time!',
             cta: {
               type: CallToActionVariantEnum.BUTTON,
               target: '_blank',

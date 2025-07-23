@@ -8,7 +8,7 @@ export default function Tickets({ backgroundColor, textColor, tickets }) {
     <div className={styles.container} style={{ color: textColor ?? 'var(--color-white)', backgroundColor: backgroundColor ?? 'var(--color-black)' }}>
       <div className={styles.row}>
         {tickets?.map((ticket, index) => {
-          const { cta, description, price, name, img } = ticket ?? null;
+          const { cta, description, price, name, img, priceColor } = ticket ?? null;
 
           return (
             <a href={cta?.link ?? '/'} className={styles.ticketLink} target={cta?.link ?? '_blank'}>
@@ -28,7 +28,7 @@ export default function Tickets({ backgroundColor, textColor, tickets }) {
 
               <div className={styles.callToAction}>
                 {cta && <CallToActionVariant type={cta.type} cta={cta} />}
-                {price && <h3 className={styles.price}>{price}</h3>}
+                {price && <h3 className={styles.price} style={priceColor ? { color: priceColor } : undefined}>{price}</h3>}
               </div>
             </div>
             </a>

@@ -530,7 +530,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'What are the venues for FIL Dev Summit?',
             collapsedText:
-              'Logistical details will be sent to you once your application has been received, approved, and you have completed the registration for this event by purchasing a ticket. The FDS Toronto event takes place on May 12th to 13th, 2025, at [MaRS Center](https://maps.app.goo.gl/S6TNNbjKc5PUTR2J8).',
+              'Logistical details will be sent to you once your application has been received, approved, and you have completed the registration for this event by purchasing a ticket. The next FIL Dev Summit is FDS-7 Buenos Aires, taking place on November 13-15, 2025. Venue details will be announced soon.',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           // {
@@ -558,14 +558,14 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'How can I lead a track?',
             collapsedText:
-              'Please fill out the provided forms for [FIL Dev Summit](https://airtable.com/appqAJpfFCFbm8EaS/shrOwersC8vPKU0fE) to lead a track or a talk.',
+              'Track and talk submissions for upcoming FIL Dev Summit events will be announced on each event page. Check the individual event pages for submission forms and deadlines.',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
             id: 'media',
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'Is there a cost to attend?',
-            collapsedText: `Please refer to the event page.`,
+            collapsedText: `Yes, there is typically a registration fee for in-person attendance. Virtual sessions may be free or have a reduced cost. Please check each event page for specific pricing details.`,
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
@@ -573,7 +573,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'How can I sponsor? What does it include?',
             collapsedText:
-              'Yes! We offer multiple levels of sponsorship for both locations. Please fill out our [sponsor form](https://airtable.com/appqAJpfFCFbm8EaS/pagDLskiazFVVDitS/form) for more information on what is included in each sponsorship.',
+              'Yes! We offer multiple levels of sponsorship for each FIL Dev Summit event. Sponsorship information and forms will be available on the event pages soon. For more information, please email [hello@fildev.io](mailto:hello@fildev.io).',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
