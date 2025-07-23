@@ -65,18 +65,18 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
           {
             id: 'media',
             type: BlockTypeEnum.TICKET_CARD,
-            price: 'TBD',
+            price: '$20',
             name: 'FDS-7: Buenos Aires - In-Person Sessions',
             backgroundColor: 'white',
             textColor: 'black',
             description: '</br></br>Register for FDS-7: Buenos Aires in-person sessions',
             cta: {
-              type: CallToActionVariantEnum.DISABLED,
+              type: CallToActionVariantEnum.BUTTON,
               target: '_blank',
-              buttonColor: '#ccc',
-              textColor: '#999',
+              buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+              textColor: 'white',
               text: 'Register',
-              link: '#',
+              link: 'https://lu.ma/lql41ipv',
             },
           },     
         ],
@@ -238,7 +238,7 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
           {
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'How can I participate at FIL Dev Summit?',
-            collapsedText: `Tickets will be available soon! Reserve your spot soon as spaces are limited!</br></br>We also offer multiple levels of sponsorship. Please check back for our sponsor form.</br></br>Finally, add the slack channel: #fil-dev-summit in [Filecoin Slack](https://filecoinproject.slack.com/archives/C05LHC1ULG1).`,
+            collapsedText: `In-person registration is now open! [Register here](https://lu.ma/lql41ipv) - spaces are limited!</br></br>Virtual session registration will be available soon.</br></br>We also offer multiple levels of sponsorship. Please check back for our sponsor form.</br></br>Finally, add the slack channel: #fil-dev-summit in [Filecoin Slack](https://filecoinproject.slack.com/archives/C05LHC1ULG1).`,
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
@@ -256,7 +256,7 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
             id: 'media',
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'Is there a cost to attend?',
-            collapsedText: `Event pricing will be announced soon. Check back for registration details.`,
+            collapsedText: `In-person registration is now open! Check the [registration page](https://lu.ma/lql41ipv) for pricing details.</br></br>Virtual session pricing will be announced soon.`,
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
@@ -333,10 +333,8 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_NAVIGATION_CONTENT = {
       text: 'Register to Attend',
       buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
       textColor: 'white',
-      href: '#',
+      href: 'https://lu.ma/lql41ipv',
       target: '_blank',
-      title: 'Coming Soon',
-      style: { opacity: '0.6', cursor: 'not-allowed' },
     },
   ],
 };

@@ -664,7 +664,7 @@ export const FILECOIN_DEV_SUMMIT_NAVIGATION_CONTENT = {
       text: 'Apply to Attend',
       buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
       textColor: 'white',
-      href: 'https://www.fildev.io/FDS-6',
+      href: 'https://lu.ma/lql41ipv',
       target: '_blank',
     },
   ],
