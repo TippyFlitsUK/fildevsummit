@@ -12,7 +12,7 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_HERO_CONTENT = {
   type: BlockTypeEnum.HERO_NO_BACKGROUND,
   title: 'FDS-7: Buenos Aires',
   description:
-    "FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!). This summit is more than just a meetup—it's a place for meaningful and impactful conversations that help push Filecoin forward. <br> <br>This event takes place on November 13th to 15th, 2025, in Buenos Aires.",
+    "FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!). This summit is more than just a meetup—it's a place for meaningful and impactful conversations that help push Filecoin forward. <br> <br>In-person sessions: November 13-15, 2025 in Buenos Aires<br>Virtual sessions: October 7-23, 2025 (15:30-22:00 UTC daily)",
 };
 
 export const FILECOIN_DEV_SUMMIT_PAGE_STYLE_CONTENT = {
@@ -48,18 +48,18 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
           {
             id: 'media',
             type: BlockTypeEnum.TICKET_CARD,
-            price: 'TBD',
+            price: 'Free',
             name: 'FDS-7: Buenos Aires - Virtual Sessions',
             backgroundColor: 'white',
             textColor: 'black',
-            description: '</br></br>Register for FDS-7: Buenos Aires virtual sessions</br></br>',
+            description: '</br></br>Register for FDS-7: Buenos Aires virtual sessions<br>October 7-23, 2025 (15:30-22:00 UTC daily)</br>',
             cta: {
-              type: CallToActionVariantEnum.DISABLED,
+              type: CallToActionVariantEnum.BUTTON,
               target: '_blank',
-              buttonColor: '#ccc',
-              textColor: '#999',
+              buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+              textColor: 'white',
               text: 'Register',
-              link: '#',
+              link: 'https://events.zoom.us/ev/AqlQpbuJ_rxk_SUKcZ8_yHWV0RIjo4Y2Z4lI5QYpaz_uwNK38ikG~AnKGnxGBk2m1zd1NuYJADtpPFJUoxTwCJ4hHHAenUtJq18UIbsESZfjLAA',
             },
           },              
           {
@@ -239,13 +239,13 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
           {
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'How can I participate at FIL Dev Summit?',
-            collapsedText: `In-person registration is now open! [Register here](https://lu.ma/lql41ipv) - spaces are limited!</br></br>Virtual session registration will be available soon.</br></br>We also offer multiple levels of sponsorship. Please check back for our sponsor form.</br></br>Finally, add the slack channel: #fil-dev-summit in [Filecoin Slack](https://filecoinproject.slack.com/archives/C05LHC1ULG1).`,
+            collapsedText: `In-person registration is now open! [Register here](https://lu.ma/lql41ipv) - spaces are limited!</br></br>Virtual session registration is now open! [Register here](https://events.zoom.us/ev/AqlQpbuJ_rxk_SUKcZ8_yHWV0RIjo4Y2Z4lI5QYpaz_uwNK38ikG~AnKGnxGBk2m1zd1NuYJADtpPFJUoxTwCJ4hHHAenUtJq18UIbsESZfjLAA) - free to attend!</br></br>We also offer multiple levels of sponsorship. Please check back for our sponsor form.</br></br>Finally, add the slack channel: #fil-dev-summit in [Filecoin Slack](https://filecoinproject.slack.com/archives/C05LHC1ULG1).`,
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'What is the venue for FDS-7: Buenos Aires?',
-            collapsedText: 'The FDS Buenos Aires event takes place on November 13th to 15th, 2025. Venue details coming soon.',
+            collapsedText: 'The FDS Buenos Aires in-person event takes place on November 13-15, 2025. Venue details coming soon.<br><br>Virtual sessions will run from October 7-23, 2025 (15:30-22:00 UTC daily) via Zoom.',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
         ],
@@ -257,7 +257,7 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
             id: 'media',
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'Is there a cost to attend?',
-            collapsedText: `In-person registration is now open! Check the [registration page](https://lu.ma/lql41ipv) for pricing details.</br></br>Virtual session pricing will be announced soon.`,
+            collapsedText: `In-person registration is now open! Check the [registration page](https://lu.ma/lql41ipv) for pricing details.</br></br>Virtual sessions are free! [Register here](https://events.zoom.us/ev/AqlQpbuJ_rxk_SUKcZ8_yHWV0RIjo4Y2Z4lI5QYpaz_uwNK38ikG~AnKGnxGBk2m1zd1NuYJADtpPFJUoxTwCJ4hHHAenUtJq18UIbsESZfjLAA) to attend virtually.`,
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {

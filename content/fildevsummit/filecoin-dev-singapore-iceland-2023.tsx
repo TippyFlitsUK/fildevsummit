@@ -79,7 +79,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
               ariaLabel: 'FDS-7: Buenos Aires',
               link: '/FDS-7',
               title: 'FDS-7: Buenos Aires',
-              subtitle: 'November 13-15, 2025',
+              subtitle: 'In-Person: Nov 13-15 | Virtual: Oct 7-23, 2025',
               rightSubheading: 'Organized by FilOz & Filecoin Foundation',
             },
           },
@@ -530,7 +530,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'What are the venues for FIL Dev Summit?',
             collapsedText:
-              'Logistical details will be sent to you once your application has been received, approved, and you have completed the registration for this event by purchasing a ticket. The next FIL Dev Summit is FDS-7 Buenos Aires, taking place on November 13-15, 2025. Venue details will be announced soon.',
+              'Logistical details will be sent to you once your application has been received, approved, and you have completed the registration for this event by purchasing a ticket. The next FIL Dev Summit is FDS-7 Buenos Aires. In-person sessions take place November 13-15, 2025 in Buenos Aires (venue details will be announced soon). Virtual sessions run October 7-23, 2025 (15:30-22:00 UTC daily) - [register here](https://events.zoom.us/ev/AqlQpbuJ_rxk_SUKcZ8_yHWV0RIjo4Y2Z4lI5QYpaz_uwNK38ikG~AnKGnxGBk2m1zd1NuYJADtpPFJUoxTwCJ4hHHAenUtJq18UIbsESZfjLAA) for free virtual attendance.',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           // {
@@ -565,7 +565,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             id: 'media',
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'Is there a cost to attend?',
-            collapsedText: `Yes, there is typically a registration fee for in-person attendance. Virtual sessions may be free or have a reduced cost. Please check each event page for specific pricing details.`,
+            collapsedText: `Yes, there is typically a registration fee for in-person attendance. Virtual sessions for FDS-7: Buenos Aires (October 7-23, 2025, 15:30-22:00 UTC daily) are free! [Register here](https://events.zoom.us/ev/AqlQpbuJ_rxk_SUKcZ8_yHWV0RIjo4Y2Z4lI5QYpaz_uwNK38ikG~AnKGnxGBk2m1zd1NuYJADtpPFJUoxTwCJ4hHHAenUtJq18UIbsESZfjLAA) to attend virtually. Please check each event page for specific pricing details.`,
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
