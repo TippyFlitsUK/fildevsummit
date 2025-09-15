@@ -222,12 +222,31 @@ export const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000;
 
 export async function makeRequest({ endpoint, host }) {
   try {
-    const res = await fetch(`http://${host}/api/${endpoint}`, { next: { revalidate: 0 } });
-    const json = await res.json();
+    // Create an AbortController with a 8-second timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 8000);
 
+    const res = await fetch(`http://${host}/api/${endpoint}`, {
+      next: { revalidate: 60 }, // Cache for 60 seconds to reduce API calls
+      signal: controller.signal
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!res.ok) {
+      console.error(`API request failed: ${res.status} ${res.statusText}`);
+      return { records: [] };
+    }
+
+    const json = await res.json();
     return { ...json };
   } catch (e) {
-    return console.log(e);
+    if (e.name === 'AbortError') {
+      console.error(`Request timeout for ${endpoint} - returning empty data`);
+      return { records: [] };
+    }
+    console.error(`Error fetching ${endpoint}:`, e);
+    return { records: [] };
   }
 }
 
