@@ -1,18 +1,11 @@
-import { BlockDirectionEnum, BlockTypeEnum as BTE, CallToActionVariantEnum, NavigationTypeEnum, Ratio, TypeName } from '@root/common/types';
-
-// Extend the BlockTypeEnum with Buenos Aires specific types
-const BlockTypeEnum = {
-  ...BTE,
-  SCHEDULE_BUENOS_AIRES: 'SCHEDULE_BUENOS_AIRES',
-  SPEAKERS_BUENOS_AIRES: 'SPEAKERS_BUENOS_AIRES',
-};
+import { BlockDirectionEnum, BlockTypeEnum, CallToActionVariantEnum, NavigationTypeEnum, Ratio, TypeName } from '@root/common/types';
 
 export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_HERO_CONTENT = {
   id: 'hero',
   type: BlockTypeEnum.HERO_NO_BACKGROUND,
   title: 'FDS-7: Buenos Aires',
   description:
-    "FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!). This summit is more than just a meetup—it's a place for meaningful and impactful conversations that help push Filecoin forward. <br> <br>In-person sessions: November 13-15, 2025 in Buenos Aires<br>Virtual sessions: October 7-23, 2025 (15:30-22:00 UTC daily)",
+    "FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!). This summit is more than just a meetup—it's a place for meaningful and impactful conversations that help push Filecoin forward. <br> <br>In-person sessions: November 13-15, 2025 in Buenos Aires<br>Virtual sessions: October 7-23, 2025 (3 hours daily, UTC)",
 };
 
 export const FILECOIN_DEV_SUMMIT_PAGE_STYLE_CONTENT = {
@@ -52,7 +45,7 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
             name: 'FDS-7: Buenos Aires - Virtual Sessions',
             backgroundColor: 'white',
             textColor: 'black',
-            description: '</br></br>Register for FDS-7: Buenos Aires virtual sessions<br>October 7-23, 2025 (15:30-22:00 UTC daily)</br>',
+            description: '</br></br>Register for FDS-7: Buenos Aires virtual sessions<br>October 7-23, 2025 (3 hours daily, UTC)</br>',
             cta: {
               type: CallToActionVariantEnum.BUTTON,
               target: '_blank',
@@ -89,12 +82,12 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
     subtitle: 'Sponsors',
     direction: BlockDirectionEnum.COLUMN,
     cta: {
-      type: CallToActionVariantEnum.DISABLED,
+      type: CallToActionVariantEnum.BUTTON,
       target: '_blank',
-      buttonColor: '#ccc',
-      textColor: '#999',
+      buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+      textColor: 'white',
       text: 'Sponsor FDS-7: Buenos Aires',
-      link: '#',
+      link: 'mailto:sponsorships@fil.org',
     },
     block: [
       {
@@ -146,9 +139,7 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
     target: '_blank',
     text: 'View the Schedule in a List',
     buttonColor: 'white',
-    link: '#',
-    title: 'Coming Soon',
-    style: { opacity: '0.6', cursor: 'not-allowed' },
+    link: '/FDS-7/list',
   },
   cta2: {
     type: CallToActionVariantEnum.DISABLED,
@@ -162,9 +153,9 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
   },
   block: [
     {
-      type: BlockTypeEnum.TEXT,
-      bigTitle: 'Coming Soon...',
-      style: { textAlign: 'center', padding: '3rem', fontSize: '1.5rem', color: '#999' },
+      type: BlockTypeEnum.SCHEDULE_BUENOS_AIRES,
+      scheduleData: FIL_DEV_SUMMIT_BUENOS_AIRES,
+      capacityFilter: 'Virtual',
     },
   ],
 },
@@ -179,9 +170,7 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
     target: '_blank',
     text: 'View the Schedule in a List',
     buttonColor: 'white',
-    link: '#',
-    title: 'Coming Soon',
-    style: { opacity: '0.6', cursor: 'not-allowed' },
+    link: '/FDS-7/list',
   },
   cta2: {
     type: CallToActionVariantEnum.DISABLED,
@@ -195,9 +184,9 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
   },
   block: [
     {
-      type: BlockTypeEnum.TEXT,
-      bigTitle: 'Coming Soon...',
-      style: { textAlign: 'center', padding: '3rem', fontSize: '1.5rem', color: '#999' },
+      type: BlockTypeEnum.SCHEDULE_BUENOS_AIRES,
+      scheduleData: FIL_DEV_SUMMIT_BUENOS_AIRES,
+      capacityFilter: 'In Person',
     },
   ],
 },
@@ -239,13 +228,13 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
           {
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'How can I participate at FIL Dev Summit?',
-            collapsedText: `In-person registration is now open! [Register here](https://lu.ma/lql41ipv) - spaces are limited!</br></br>Virtual session registration is now open! [Register here](https://events.zoom.us/ev/AqlQpbuJ_rxk_SUKcZ8_yHWV0RIjo4Y2Z4lI5QYpaz_uwNK38ikG~AnKGnxGBk2m1zd1NuYJADtpPFJUoxTwCJ4hHHAenUtJq18UIbsESZfjLAA) - free to attend!</br></br>We also offer multiple levels of sponsorship. Please check back for our sponsor form.</br></br>Finally, add the slack channel: #fil-dev-summit in [Filecoin Slack](https://filecoinproject.slack.com/archives/C05LHC1ULG1).`,
+            collapsedText: `In-person registration is now open! [Register here](https://lu.ma/lql41ipv) - spaces are limited!</br></br>Virtual session registration is now open! [Register here](https://events.zoom.us/ev/AqlQpbuJ_rxk_SUKcZ8_yHWV0RIjo4Y2Z4lI5QYpaz_uwNK38ikG~AnKGnxGBk2m1zd1NuYJADtpPFJUoxTwCJ4hHHAenUtJq18UIbsESZfjLAA) - free to attend!</br></br>We also offer multiple levels of sponsorship. For sponsorship opportunities, please email [sponsorships@fil.org](mailto:sponsorships@fil.org).</br></br>Finally, add the slack channel: #fil-dev-summit in [Filecoin Slack](https://filecoinproject.slack.com/archives/C05LHC1ULG1).`,
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'What is the venue for FDS-7: Buenos Aires?',
-            collapsedText: 'The FDS Buenos Aires in-person event takes place on November 13-15, 2025. Venue details coming soon.<br><br>Virtual sessions will run from October 7-23, 2025 (15:30-22:00 UTC daily) via Zoom.',
+            collapsedText: 'The FDS Buenos Aires in-person event takes place on November 13-15, 2025. Venue details coming soon.<br><br>Virtual sessions will run from October 7-23, 2025 (3 hours daily, UTC) via Zoom.',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
         ],
@@ -265,7 +254,7 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'How can I sponsor? What does it include?',
             collapsedText:
-              'We offer multiple levels of sponsorship. Sponsor form coming soon.',
+              'We offer multiple levels of sponsorship. For sponsorship opportunities, please email [sponsorships@fil.org](mailto:sponsorships@fil.org).',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
@@ -348,8 +337,8 @@ export const FDS_7_LIST_CONTENT = [
     title: 'FDS-7: Buenos Aires Schedule',
     block: [
       {
-        type: BlockTypeEnum.TEXT,
-        paragraph: 'Coming Soon...',
+        type: BlockTypeEnum.SCHEDULE_LIST_TOGGLE,
+        scheduleData: FIL_DEV_SUMMIT_BUENOS_AIRES,
       },
     ],
   },

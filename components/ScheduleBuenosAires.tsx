@@ -3,7 +3,6 @@ import styles from '@components/Schedule.module.scss';
 import { ensureMinimumEntries, formatAirtableMetaData, getFormattedAirtableFields, getSpeakers, sortCalendarDataByDate } from '@root/resolvers/airtable-import';
 import { useState, useEffect } from 'react';
 import Schedule from './Schedule';
-import Speakers from './Speakers';
 const NODE = process.env.NODE_ENV || 'development';
 const IS_PRODUCTION = NODE === 'production';
 if (!IS_PRODUCTION) {
@@ -48,28 +47,30 @@ useEffect(() => {
       // Rest of your existing code
       const fetchedSpeakers = getSpeakers(filteredData);
       setBuenosAiresData(filteredData);
-      setSpeakers(fetchedSpeakers);
+      setSpeakers(fetchedSpeakers.filter((speaker, index, self) => 
+        index === self.findIndex(s => s.fullName === speaker.fullName)
+      ));
     };
-
     organizeData();
   }
-}, [scheduleData?.airtable, capacityFilter]);
+}, [scheduleData, capacityFilter]);
 
-  const scheduleSettings = {
-    dateFilter: 'DISABLED',
-    trackFilter: 'ON',
-    tagDisplay: 'DISABLED',
-    tableMaxHeight: 2700,
-    searchBar: 'ON',
-    eventDetailPopUp: 'ON',
-    daysToggleBar: 'DISABLED',
-    talksTable: 'DISABLED',
+  const toggleExpandCollapse = () => {
+    setIsExpanded(!isExpanded);
   };
-
+  if (!buenosAiresData) return null;
+  
+  const formattedAirtableData = getFormattedAirtableFields(buenosAiresData);
+  const calendarData = sortCalendarDataByDate(formattedAirtableData);
+  const startPlaceholder = 'Thu, Oct 7';
+  const endPlaceholder = 'Fri, Nov 15';
+  const ensuredCalendarData = ensureMinimumEntries(calendarData, startPlaceholder, endPlaceholder);
+  
   return (
-    <section className={styles.container}>
-      {buenosAiresData && <Schedule calendarData={buenosAiresData} scheduleId="buenos-aires-schedule" />}
-      {buenosAiresData && speakers && <Speakers speakers={speakers} />}
-    </section>
+    <>
+      <div style={{ paddingBottom: '2rem', display: 'grid', rowGap: '3rem' }}>
+        <Schedule calendarData={ensuredCalendarData} scheduleId={'schedule-buenos-aires'} />
+      </div>
+    </>
   );
 }
