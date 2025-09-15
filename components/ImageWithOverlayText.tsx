@@ -3,8 +3,12 @@ import styles from '@components/ImageWithOverlayText.module.scss';
 import Image from './Image';
 
 export default function ImageWithOverlayText({ alt, textColor, src, title, subtitle, rightSubheading }) {
+  // Only apply overlay to Buenos Aires image (ba5.jpg)
+  const needsOverlay = src && src.includes('ba5.jpg');
+  const containerClass = needsOverlay ? `${styles.container} ${styles.containerWithOverlay}` : styles.container;
+
   return (
-    <div style={{ width: '100%' }} className={styles.container}>
+    <div style={{ width: '100%' }} className={containerClass}>
       <div className={styles.textContainer} style={{ paddingBottom: '1rem' }}>
         <div className={styles.leftText} style={{ color: textColor ?? 'var(--color-white)' }}>
           {title && <h1 className={styles.title}>{title}</h1>}
