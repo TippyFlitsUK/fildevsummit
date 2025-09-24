@@ -558,7 +558,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'How can I lead a track?',
             collapsedText:
-              'Track and talk submissions for upcoming FIL Dev Summit events will be announced on each event page. Check the individual event pages for submission forms and deadlines.',
+              'Track and talk submissions for upcoming FIL Dev Summit events will be announced on each event page. **FDS-7: Buenos Aires submissions are now open!** [Submit your talk here](https://airtable.com/apps2ObNl4B1MzBrr/shrNF079S9pwQO3pz). Check the individual event pages for submission forms and deadlines.',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {

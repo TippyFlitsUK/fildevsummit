@@ -142,14 +142,12 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
     link: '/FDS-7/list',
   },
   cta2: {
-    type: CallToActionVariantEnum.DISABLED,
-    textColor: '#999',
+    type: CallToActionVariantEnum.BUTTON,
+    textColor: 'white',
     target: '_blank',
     text: 'Submit a Talk for FDS-7: Buenos Aires',
-    buttonColor: '#ccc',
-    link: '#',
-    style: { opacity: '0.5', cursor: 'not-allowed' },
-    title: 'Coming Soon',
+    buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+    link: 'https://airtable.com/apps2ObNl4B1MzBrr/shrNF079S9pwQO3pz',
   },
   block: [
     {
@@ -162,7 +160,7 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
 {
   id: 'schedule-buenos-aires',
   direction: BlockDirectionEnum.COLUMN,
-  title: 'In-Person Event Schedule', 
+  title: 'In-Person Event Schedule',
   description: 'Sessions taking place at the venue',
   cta: {
     type: CallToActionVariantEnum.BORDER,
@@ -173,14 +171,12 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
     link: '/FDS-7/list',
   },
   cta2: {
-    type: CallToActionVariantEnum.DISABLED,
-    textColor: '#999',
+    type: CallToActionVariantEnum.BUTTON,
+    textColor: 'white',
     target: '_blank',
     text: 'Submit a Talk for FDS-7: Buenos Aires',
-    buttonColor: '#ccc',
-    link: '#',
-    style: { opacity: '0.5', cursor: 'not-allowed' },
-    title: 'Coming Soon',
+    buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+    link: 'https://airtable.com/apps2ObNl4B1MzBrr/shrNF079S9pwQO3pz',
   },
   block: [
     {
