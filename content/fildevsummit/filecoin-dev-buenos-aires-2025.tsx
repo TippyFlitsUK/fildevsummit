@@ -58,12 +58,11 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
           {
             id: 'media',
             type: BlockTypeEnum.TICKET_CARD,
-            price: '$20 Early Bird',
-            priceColor: '#8B0000',
+            price: '$20',
             name: 'FDS-7: Buenos Aires - In-Person Sessions',
             backgroundColor: 'white',
             textColor: 'black',
-            description: '</br></br>Register for FDS-7: Buenos Aires in-person sessions - Early bird pricing available for a limited time!',
+            description: '</br></br>Register for FDS-7: Buenos Aires in-person sessions</br></br>',
             cta: {
               type: CallToActionVariantEnum.BUTTON,
               target: '_blank',
