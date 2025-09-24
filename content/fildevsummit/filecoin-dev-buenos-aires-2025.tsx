@@ -5,7 +5,7 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_HERO_CONTENT = {
   type: BlockTypeEnum.HERO_NO_BACKGROUND,
   title: 'FDS-7: Buenos Aires',
   description:
-    "FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!). This summit is more than just a meetup—it's a place for meaningful and impactful conversations that help push Filecoin forward. <br> <br>In-person sessions: November 13-15, 2025 in Buenos Aires<br>Virtual sessions: October 7-23, 2025 (3 hours daily, UTC)",
+    "FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!). This summit is more than just a meetup—it's a place for meaningful and impactful conversations that help push Filecoin forward. <br> <br>In-person sessions: November 13-15, 2025 in Buenos Aires<br>Virtual sessions: October 16-17, 2025 (11AM to 3PM ET daily)",
 };
 
 export const FILECOIN_DEV_SUMMIT_PAGE_STYLE_CONTENT = {
@@ -45,7 +45,7 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
             name: 'FDS-7: Buenos Aires - Virtual Sessions',
             backgroundColor: 'white',
             textColor: 'black',
-            description: '</br></br>Register for FDS-7: Buenos Aires virtual sessions<br>October 7-23, 2025 (3 hours daily, UTC)</br>',
+            description: '</br></br>Register for FDS-7: Buenos Aires virtual sessions<br>October 16-17, 2025 (11AM to 3PM ET daily)</br>',
             cta: {
               type: CallToActionVariantEnum.BUTTON,
               target: '_blank',
@@ -229,7 +229,7 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
           {
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'What is the venue for FDS-7: Buenos Aires?',
-            collapsedText: 'The FDS Buenos Aires in-person event takes place on November 13-15, 2025. Venue details coming soon.<br><br>Virtual sessions will run from October 7-23, 2025 (3 hours daily, UTC) via Zoom.',
+            collapsedText: 'The FDS Buenos Aires in-person event takes place on November 13-15, 2025. Venue details coming soon.<br><br>Virtual sessions will run from October 16-17, 2025 (11AM to 3PM ET daily) via Zoom.',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
         ],
