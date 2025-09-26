@@ -192,9 +192,8 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
   description: 'Featured speakers at FDS-7: Buenos Aires',
   block: [
     {
-      type: BlockTypeEnum.TEXT,
-      bigTitle: 'Coming Soon...',
-      style: { textAlign: 'center', padding: '3rem', fontSize: '1.5rem', color: '#999' },
+      type: BlockTypeEnum.SPEAKERS_BUENOS_AIRES,
+      speakersData: FIL_DEV_SUMMIT_BUENOS_AIRES_SPEAKERS,
     },
   ],
 },

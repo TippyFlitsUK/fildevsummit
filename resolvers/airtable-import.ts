@@ -5,8 +5,11 @@ import moment from 'moment';
 export const airtableFormattedFieldsMap = {
   // for all
   Title: 'title',
+  'Track/Session Title': 'title',  // New Buenos Aires field
+  'Talk Title': 'title',  // Buenos Aires uses this for session titles
   'Talk or Track?': 'type',
   'Talk or Track': 'type',
+  'Track/Session': 'type',  // New Buenos Aires field
   'IS THIS A TRACK OR A TALK': 'type',
   'Start Time': 'startTime', // date + time
   'Youtube Link': 'videoLink',
@@ -22,16 +25,20 @@ export const airtableFormattedFieldsMap = {
 
   // talk details
   'Talk Description': 'desc',
+  'What is the description of your talk?': 'desc',  // Buenos Aires field
+  'What are the goals of your talk?': 'desc',  // Buenos Aires alternate description
   'What track(s) would be suitable for your session?': 'tracks',
   'What track(s) would be suitable for your session': 'tracks',
   'What category(s) would be suitable for your session?': 'tracks',
   Category: 'tracks',
+  'Category/Focus Area': 'tracks',  // New Buenos Aires field
   'Archive of Original Tracks Submission': 'tracksSubmittedFor',
   'What format(s) are suitable for your talk or workshop?': 'format',
   'Talk Status': 'status',
 
   // for talks
   'Track Date (from TrackLink)': 'trackDate',
+  'Track Date': 'trackDate',  // New Buenos Aires field
   Duration: 'duration',
   Order: 'order',
   'Slide Deck': 'slidesLink',
@@ -155,7 +162,7 @@ export function formatAirtableMetaData({ records, timezone }) {
   const acceptedRecords = formattedRecords?.filter((record) => {
     if (record.type === TrackOrTalkEnum.TRACK) {
       return record.trackStatus === ScheduleStatusEnum.CONFIRMED;
-    } else if (record.type === TrackOrTalkEnum.TALK) {
+    } else if (record.type === TrackOrTalkEnum.TALK || record.type === TrackOrTalkEnum.SESSION) {
       return record.status === ScheduleStatusEnum.ACCEPTED_BY_TRACK_LEAD;
     } else {
       // Ignore records with unknown or missing type
@@ -270,8 +277,8 @@ export function getFormattedAirtableFields(formattedAirtableData): any {
             };
             groupedData[formattedDate].push(existingTrack);
           }
-        } else if (formattedRecord.type === 'Talk') {
-          // Save 'Talk' records for processing later
+        } else if (formattedRecord.type === 'Talk' || formattedRecord.type === 'Session') {
+          // Save 'Talk' or 'Session' records for processing later
 
           talkRecords.push(formattedRecord);
         } else {

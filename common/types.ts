@@ -120,4 +120,5 @@ export enum ScheduleStatusEnum {
 export enum TrackOrTalkEnum {
   TRACK = 'Track',
   TALK = 'Talk',
+  SESSION = 'Session',  // Buenos Aires uses 'Session' instead of 'Talk'
 }

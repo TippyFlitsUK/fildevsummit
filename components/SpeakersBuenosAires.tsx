@@ -29,7 +29,9 @@ export default function SPEAKERS_BUENOS_AIRES({ speakersData }: any) {
   
   useEffect(() => {
     if (speakersData?.airtable?.data?.records) {
-      const mappedSpeakers = speakersData.airtable.data.records.map(record => {
+      const mappedSpeakers = speakersData.airtable.data.records
+        .filter(record => record.fields['Activate'] === true)  // Only include activated speakers
+        .map(record => {
         const fields = record.fields;
         
         // Extract headshot URL from the attachment object
@@ -57,34 +59,57 @@ export default function SPEAKERS_BUENOS_AIRES({ speakersData }: any) {
   if (speakers.length === 0) return null;
 
   return (
-    <section className={styles.speakersSection}>
-      <div className={styles.speakersGrid}>
-        {speakers.map((speaker, index) => (
-          <div key={index} className={styles.speakerCard}>
-            <div className={styles.speakerImageWrapper}>
-              <img 
-                src={speaker.headshot} 
-                alt={speaker.fullName}
-                className={styles.speakerImage}
-              />
-            </div>
-            <div className={styles.speakerInfo}>
-              <h3 className={styles.speakerName}>{speaker.fullName}</h3>
-              <p className={styles.speakerTitle}>{speaker.spkrTitle}</p>
-              {speaker.linkedinUrl && (
-                <a 
-                  href={speaker.linkedinUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className={styles.linkedinLink}
-                >
-                  <LinkedInSVG />
-                </a>
-              )}
-            </div>
-          </div>
-        ))}
+    <div>
+      <h1 style={{ fontSize: 'var(--font-size-large)', fontWeight: 'var(--font-weight-light' }}>Speakers</h1>
+
+      <div className={styles.container}>
+        <div className={styles.row}>
+          {speakers.map((speaker, index) => {
+            const { fullName, spkrTitle, linkedinUrl, headshot } = speaker;
+
+            return (
+              <div key={index}>
+                {linkedinUrl ? (
+                  <a href={linkedinUrl} className={styles.link} target="_blank">
+                    <SpeakerCardWithImage
+                      fullName={fullName}
+                      spkrTitle={spkrTitle}
+                      linkedinUrl={linkedinUrl}
+                      headShotSrc={headshot}
+                    />
+                  </a>
+                ) : (
+                  <SpeakerCardWithImage
+                    fullName={fullName}
+                    spkrTitle={spkrTitle}
+                    linkedinUrl={linkedinUrl}
+                    headShotSrc={headshot}
+                  />
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </section>
+    </div>
+  );
+}
+
+function SpeakerCardWithImage({ headShotSrc, fullName, spkrTitle, linkedinUrl }) {
+  return (
+    <div className={styles.speakerContainer}>
+      {headShotSrc && <img className={styles.headshot} alt={fullName} src={headShotSrc} />}
+      <div className={styles.row}>
+        <div style={{ display: 'grid', rowGap: '0.5rem' }}>
+          {fullName && <p className={styles.firstName}>{fullName}</p>}
+          {spkrTitle && <p className={styles.spkrTitle}>{spkrTitle}</p>}
+        </div>
+        {linkedinUrl && (
+          <span className={styles.speakerCardTwitter} style={{transform: 'scale(1.5)'}}>
+            <LinkedInSVG />
+          </span>
+        )}
+      </div>
+    </div>
   );
 }

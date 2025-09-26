@@ -60,12 +60,58 @@ useEffect(() => {
   };
   if (!buenosAiresData) return null;
   
-  const formattedAirtableData = getFormattedAirtableFields(buenosAiresData);
-  const calendarData = sortCalendarDataByDate(formattedAirtableData);
+  // For virtual schedule, we need to transform the data differently
+  let processedCalendarData;
+
+  if (capacityFilter === 'Virtual') {
+    // For virtual schedule: flatten sessions from tracks and display them directly
+    const formattedAirtableData = getFormattedAirtableFields(buenosAiresData);
+
+    // Create a new structure where sessions are displayed directly
+    const virtualCalendarData: any = {};
+
+    Object.entries(formattedAirtableData).forEach(([dateKey, tracksForDate]: [string, any]) => {
+      if (Array.isArray(tracksForDate)) {
+        virtualCalendarData[dateKey] = [];
+
+        tracksForDate.forEach((track: any) => {
+          // Add sessions from this track directly to the date
+          if (track.records && Array.isArray(track.records)) {
+            track.records.forEach((session: any) => {
+              // Create a track-like structure for each session
+              virtualCalendarData[dateKey].push({
+                trackDetails: {
+                  ...session,
+                  title: session.title || 'Session',
+                  time: session.time || session.talkDuration || session.startTime || '',  // USE session.time FIRST!
+                  firstName: session.firstName,
+                  fullName: session.fullName,
+                  roomName: track.trackDetails?.roomName || '',
+                  capacity: session.capacity || track.trackDetails?.capacity || '',
+                  tracks: session.tracks || [],
+                  desc: session.desc || '',
+                  id: session.id,
+                  trackDate: session.trackDate || track.trackDetails?.trackDate
+                },
+                records: [] // Sessions don't have sub-records
+              });
+            });
+          }
+        });
+      }
+    });
+
+    processedCalendarData = sortCalendarDataByDate(virtualCalendarData);
+  } else {
+    // For in-person schedule: keep the original track-based structure
+    const formattedAirtableData = getFormattedAirtableFields(buenosAiresData);
+    processedCalendarData = sortCalendarDataByDate(formattedAirtableData);
+  }
+
   const startPlaceholder = 'Thu, Oct 7';
   const endPlaceholder = 'Fri, Nov 15';
-  const ensuredCalendarData = ensureMinimumEntries(calendarData, startPlaceholder, endPlaceholder);
-  
+  const ensuredCalendarData = ensureMinimumEntries(processedCalendarData, startPlaceholder, endPlaceholder);
+
   return (
     <>
       <div style={{ paddingBottom: '2rem', display: 'grid', rowGap: '3rem' }}>
