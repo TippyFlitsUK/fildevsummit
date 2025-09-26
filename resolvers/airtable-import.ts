@@ -38,7 +38,6 @@ export const airtableFormattedFieldsMap = {
 
   // for talks
   'Track Date (from TrackLink)': 'trackDate',
-  'Track Date': 'trackDate',  // New Buenos Aires field
   Duration: 'duration',
   Order: 'order',
   'Slide Deck': 'slidesLink',
