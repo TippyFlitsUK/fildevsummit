@@ -124,7 +124,7 @@ export default function ScheduleListByTalks({ scheduleData }) {
                         {filteredRecords.map((record, index) => (
                           <div key={index} className={classNames(styles.grid2Cols, styles.borderTalksContainer)} style={{ borderBottom: '0.5px solid var(--color-blue-gray)' }}>
                             <p className={styles.col10} style={{ padding: '0rem 0.5rem', fontFamily: 'Inter', fontWeight: 'font-weight: var(--font-weight-light)' }}>
-                              {record.startTime ?? '─'}
+                              {record.startTime ? `${record.startTime} ET` : '─'}
                             </p>
 
                             {record?.title && (

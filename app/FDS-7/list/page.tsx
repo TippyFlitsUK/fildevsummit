@@ -54,9 +54,6 @@ export default async function Page(props) {
   const currentHeaders = headers();
   const host = currentHeaders.get('host');
 
-  // Since Buenos Aires schedule is coming soon, we don't need to fetch data yet
-  // When ready, uncomment and update:
-  /*
   const promises = blocks.flatMap((innerBlocks) => {
     return innerBlocks.block.map(async (blockItem) => {
       // Fetch table data
@@ -72,7 +69,6 @@ export default async function Page(props) {
   });
 
   await Promise.all(promises);
-  */
 
   return (
     <div style={{ background: pageStyle.backgroundColor, color: pageStyle.textColor }}>
