@@ -2,6 +2,7 @@
 
 // Override eventBox heights - reduced by 20% for FDS-7
 .eventBox {
+  height: auto;
   min-height: 160px;
 
   @media (max-width: 1440px) {
