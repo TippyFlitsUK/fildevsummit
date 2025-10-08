@@ -21,6 +21,7 @@ import ScheduleBangkok from './ScheduleBangkok';
 import ScheduleToronto from './ScheduleToronto';
 import ScheduleBuenosAires from './ScheduleBuenosAires';
 import ScheduleListByTrack from './ScheduleListByTrack';
+import ScheduleListBuenosAires from './ScheduleListBuenosAires';
 import ScheduleListByTalks from './ScheduleListByTalks';
 import ScheduleListToggleByTimeOrTrack from './ScheduleListToggle';
 import EventsRow from './EventsRow';
@@ -81,6 +82,8 @@ export function Block({ block }) {
       return <ScheduleListToggleByTimeOrTrack {...block} />;
     case (block.type = BlockTypeEnum.SCHEDULE_LIST_TOGGLE):
       return <ScheduleListToggleByTimeOrTrack {...block} />;
+    case (block.type = BlockTypeEnum.SCHEDULE_LIST_BUENOS_AIRES):
+      return <ScheduleListBuenosAires {...block} />;
     case (block.type = BlockTypeEnum.TABLE):
       return <Table {...block} />;
     case (block.type = BlockTypeEnum.TICKET_CARD):

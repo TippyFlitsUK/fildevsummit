@@ -331,7 +331,7 @@ export const FDS_7_LIST_CONTENT = [
     title: 'FDS-7: Buenos Aires Schedule',
     block: [
       {
-        type: BlockTypeEnum.SCHEDULE_LIST_TOGGLE,
+        type: BlockTypeEnum.SCHEDULE_LIST_BUENOS_AIRES,
         scheduleData: FIL_DEV_SUMMIT_BUENOS_AIRES,
       },
     ],

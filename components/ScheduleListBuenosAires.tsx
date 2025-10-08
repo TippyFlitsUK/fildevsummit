@@ -8,10 +8,9 @@ import Loading from './Loading';
 
 import VideoPlayerSVG from './svgs/VideoPlayerSVG';
 
-export default function ScheduleListByTrack({ scheduleData }) {
+export default function ScheduleListBuenosAires({ scheduleData }) {
   const [eventData, setEventData] = useState<any[] | null>(null);
   const [isLoading, setLoading] = useState(true);
-  const [selectedDate, setSelectedDate] = useState<string | null>(null);
 
   useEffect(() => {
     if (scheduleData?.airtable) {
@@ -39,24 +38,9 @@ export default function ScheduleListByTrack({ scheduleData }) {
 
   if (!formattedAirtableData) return null;
 
-  const allDates = Object.keys(formattedAirtableData);
-
   return (
     <>
-      <div className={styles.tracksFilterRow}>
-        <p className={styles.tracksFilterText}>Sort by Date</p>
-        <select className={styles.tracksFilter} value={selectedDate || ''} onChange={(e) => setSelectedDate(e.target.value)}>
-          <option value="">All Dates</option>
-          {allDates.map((date) => (
-            <option key={date} value={date}>
-              {date}
-            </option>
-          ))}
-        </select>
-      </div>
-
       {Object?.entries(formattedAirtableData)?.map(([date, events]: any) => {
-        if (selectedDate && selectedDate !== date) return null;
 
         return (
           <div key={date} className={styles.list}>
@@ -68,10 +52,16 @@ export default function ScheduleListByTrack({ scheduleData }) {
 
             {events &&
               (events as any).map((event, index) => {
+                const displayTitle = event.title?.includes('Mainstage')
+                  ? 'Supernova Stage'
+                  : event.title?.includes('Side Stage')
+                  ? 'Galaxy Stage'
+                  : event.title;
+
                 return (
                   <div key={index}>
                     <div className={styles.border} style={{ padding: '2rem', display: 'grid', rowGap: '0.75rem' }}>
-                      {event.title && <h3 className={styles.title}>{event.title}</h3>}
+                      {displayTitle && <h3 className={styles.title}>{displayTitle}</h3>}
                       {event.trackDetails ? (
                         <div className={classNames(styles.row)}>
                           {event.trackDetails.time && <p className={styles.time}>{event.trackDetails.time}</p>}
