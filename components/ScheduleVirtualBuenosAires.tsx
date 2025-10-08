@@ -125,7 +125,7 @@ export default function ScheduleVirtualBuenosAires({ calendarData, scheduleId })
                 </div>
 
                 {/* Split tracks into two columns */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <div className={styles.twoColumnGrid}>
                   {/* Supernova Column */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     {/* Stage header */}

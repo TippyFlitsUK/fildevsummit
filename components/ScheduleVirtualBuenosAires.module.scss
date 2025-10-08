@@ -22,6 +22,18 @@
   }
 }
 
+// Two-column grid that maintains layout on mobile
+.twoColumnGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  min-width: 600px; // Prevents collapse on mobile, forces horizontal scroll
+
+  @media (max-width: 768px) {
+    grid-template-columns: minmax(280px, 1fr) minmax(280px, 1fr);
+  }
+}
+
 // Buenos Aires custom stage heading
 .stageHeading {
   display: flex;
