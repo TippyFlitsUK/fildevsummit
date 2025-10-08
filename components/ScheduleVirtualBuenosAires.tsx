@@ -110,8 +110,8 @@ export default function ScheduleVirtualBuenosAires({ calendarData, scheduleId })
             const hasItems = Array.isArray(tracksForDate) && tracksForDate.length > 0;
 
             // Get Supernova and Galaxy tracks
-            const supernovaTrack = tracksForDate.find(t => t.trackDetails?.title === 'Supernova');
-            const galaxyTrack = tracksForDate.find(t => t.trackDetails?.title === 'Galaxy');
+            const supernovaTrack = (tracksForDate as any[]).find(t => t.trackDetails?.title === 'Supernova');
+            const galaxyTrack = (tracksForDate as any[]).find(t => t.trackDetails?.title === 'Galaxy');
 
             return (
               <div key={index} className={`${styles.eventStyle} ${hasItems ? '' : styles.hideItems}`}>
