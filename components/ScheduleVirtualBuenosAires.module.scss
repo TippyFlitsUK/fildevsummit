@@ -1,5 +1,24 @@
 @use './Schedule.module.scss' as *;
 
+// Override schedule to maintain grid on mobile
+.schedule {
+  display: grid !important;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    display: grid !important; // Override flex from global
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(600px, 1fr);
+  }
+}
+
+// Override eventStyle to maintain proper structure
+.eventStyle {
+  @media (max-width: 768px) {
+    min-width: 600px;
+  }
+}
+
 // Override eventBox heights - reduced by 20% for FDS-7
 .eventBox {
   height: auto;
@@ -27,10 +46,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  min-width: 600px; // Prevents collapse on mobile, forces horizontal scroll
 
   @media (max-width: 768px) {
-    grid-template-columns: minmax(280px, 1fr) minmax(280px, 1fr);
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
   }
 }
 
