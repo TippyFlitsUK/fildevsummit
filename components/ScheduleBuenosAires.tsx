@@ -89,6 +89,7 @@ useEffect(() => {
                   roomName: track.trackDetails?.roomName || '',
                   capacity: session.capacity || track.trackDetails?.capacity || '',
                   tracks: session.tracks || [],
+                  trackDesc: session.desc || '',
                   desc: session.desc || '',
                   id: session.id,
                   trackDate: session.trackDate || track.trackDetails?.trackDate

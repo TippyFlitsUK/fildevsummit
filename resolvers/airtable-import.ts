@@ -25,7 +25,8 @@ export const airtableFormattedFieldsMap = {
 
   // talk details
   'Talk Description': 'desc',
-  'What is the description of your talk?': 'desc',  // Buenos Aires field
+  'What is the description of your talk? ': 'desc',  // Buenos Aires field (with trailing space)
+  'What is the description of your talk?': 'desc',  // Buenos Aires field (no trailing space)
   'What are the goals of your talk?': 'desc',  // Buenos Aires alternate description
   'What track(s) would be suitable for your session?': 'tracks',
   'What track(s) would be suitable for your session': 'tracks',
