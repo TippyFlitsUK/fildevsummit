@@ -74,7 +74,7 @@ export default function ScheduleListByTrack({ scheduleData }) {
                       {event.title && <h3 className={styles.title}>{event.title}</h3>}
                       {event.trackDetails ? (
                         <div className={classNames(styles.row)}>
-                          {event.trackDetails.time && <p className={styles.time}>{event.trackDetails.time} ET</p>}
+                          {event.trackDetails.time && <p className={styles.time}>{event.trackDetails.time}</p>}
                           {event.trackDetails.roomName && <p> Room: {event.trackDetails.roomName}</p>}
                           {event.trackDetails.capacity && <p> Capacity: {event.trackDetails.capacity}</p>}
                         </div>
@@ -96,7 +96,7 @@ export default function ScheduleListByTrack({ scheduleData }) {
                               className={classNames(styles.grid2Cols, styles.borderTalksContainer)}
                               style={{ borderBottom: index === event.records.length - 1 ? 'none' : '0.5px solid var(--color-blue-gray)' }}
                             >
-                              <p className={styles.col10}>{record.startTime ? `${record.startTime} ET` : '─'}</p>
+                              <p className={styles.col10}>{record.time || '─'}</p>
                               {record?.title && <p className={classNames(styles.col20, styles.desc)}>{record.title}</p>}
 
                               {(record?.firstName || record?.fullName) && <p className={classNames(styles.col10, styles.desc)}>{record.firstName || record.fullName}</p>}
