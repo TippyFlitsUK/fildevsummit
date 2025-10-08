@@ -1,0 +1,38 @@
+@use './Schedule.module.scss' as *;
+
+// Override eventBox heights - reduced by 20% for FDS-7
+.eventBox {
+  height: 160px;
+
+  @media (max-width: 1440px) {
+    height: 168px;
+  }
+
+  @media (max-width: 1140px) {
+    height: 208px;
+  }
+
+  @media (max-width: 1024px) {
+    height: 208px;
+  }
+
+  @media (max-width: 768px) {
+    height: 200px;
+  }
+}
+
+// Buenos Aires custom stage heading
+.stageHeading {
+  display: flex;
+  width: 100%;
+  min-width: 150px;
+  background-color: #e0e0e0;
+  color: var(--color-black);
+  gap: 3rem;
+  padding: 0.9rem 0.75rem;
+  justify-content: space-between;
+  font-size: var(--font-size-regular);
+  border-radius: var(--border-radius-small);
+  font-weight: var(--font-weight-regular);
+  font-family: inherit;
+}

@@ -1,5 +1,5 @@
 'use client';
-import styles from '@components/Schedule.module.scss';
+import styles from './ScheduleVirtualBuenosAires.module.scss';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { SchedulePopUp } from './SchedulePopUp';
 import { classNames, cleanString } from '@root/common/utilities';
