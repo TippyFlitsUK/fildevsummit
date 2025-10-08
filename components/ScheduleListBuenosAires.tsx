@@ -40,18 +40,23 @@ export default function ScheduleListBuenosAires({ scheduleData }) {
 
   return (
     <>
-      {Object?.entries(formattedAirtableData)?.map(([date, events]: any) => {
+      {Object?.entries(formattedAirtableData)?.map(([date, events]: any, dateIndex) => {
 
         return (
-          <div key={date} className={styles.list}>
+          <div key={date} className={styles.list} style={{ marginTop: dateIndex === 0 ? 0 : '3rem' }}>
             {date && (
-              <h2 className={styles.date}>
+              <h2 className={styles.date} style={{ marginBottom: '0.25rem' }}>
                 {date}
               </h2>
             )}
 
             {events &&
               (events as any).map((event, index) => {
+                // Skip "Virtual FIL Dev Summit Day" container tracks
+                if (event.title?.includes('Virtual FIL Dev Summit Day')) {
+                  return null;
+                }
+
                 const displayTitle = event.title?.includes('Mainstage')
                   ? 'Supernova Stage'
                   : event.title?.includes('Side Stage')
