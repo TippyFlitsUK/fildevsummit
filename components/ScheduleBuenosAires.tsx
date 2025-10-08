@@ -3,6 +3,7 @@ import styles from '@components/Schedule.module.scss';
 import { ensureMinimumEntries, formatAirtableMetaData, getFormattedAirtableFields, getSpeakers, sortCalendarDataByDate } from '@root/resolvers/airtable-import';
 import { useState, useEffect } from 'react';
 import Schedule from './Schedule';
+import ScheduleVirtualBuenosAires from './ScheduleVirtualBuenosAires';
 const NODE = process.env.NODE_ENV || 'development';
 const IS_PRODUCTION = NODE === 'production';
 if (!IS_PRODUCTION) {
@@ -64,41 +65,60 @@ useEffect(() => {
   let processedCalendarData;
 
   if (capacityFilter === 'Virtual') {
-    // For virtual schedule: flatten sessions from tracks and display them directly
+    // For virtual schedule: group sessions into Supernova and Galaxy stages per date
     const formattedAirtableData = getFormattedAirtableFields(buenosAiresData);
 
-    // Create a new structure where sessions are displayed directly
+    // Create a new structure with 2 tracks per date: Supernova and Galaxy
     const virtualCalendarData: any = {};
 
     Object.entries(formattedAirtableData).forEach(([dateKey, tracksForDate]: [string, any]) => {
       if (Array.isArray(tracksForDate)) {
         virtualCalendarData[dateKey] = [];
 
+        // Collect all sessions from all tracks for this date
+        const allSessions: any[] = [];
         tracksForDate.forEach((track: any) => {
-          // Add sessions from this track directly to the date
           if (track.records && Array.isArray(track.records)) {
-            track.records.forEach((session: any) => {
-              // Create a track-like structure for each session
-              virtualCalendarData[dateKey].push({
-                trackDetails: {
-                  ...session,
-                  title: session.title || 'Session',
-                  time: session.time || session.talkDuration || session.startTime || '',  // USE session.time FIRST!
-                  firstName: session.firstName,
-                  fullName: session.fullName,
-                  roomName: track.trackDetails?.roomName || '',
-                  capacity: session.capacity || track.trackDetails?.capacity || '',
-                  tracks: session.tracks || [],
-                  trackDesc: session.desc || '',
-                  desc: session.desc || '',
-                  id: session.id,
-                  trackDate: session.trackDate || track.trackDetails?.trackDate
-                },
-                records: [] // Sessions don't have sub-records
-              });
-            });
+            allSessions.push(...track.records);
           }
         });
+
+        // Separate sessions into Supernova (Mainstage) and Galaxy (Side Stage)
+        const supernovaSessions = allSessions.filter(session => {
+          const categories = session.tracks || [];
+          return categories.some((cat: string) => cat.includes('Mainstage'));
+        });
+
+        const galaxySessions = allSessions.filter(session => {
+          const categories = session.tracks || [];
+          return categories.some((cat: string) => cat.includes('Side Stage'));
+        });
+
+        // Create Supernova track
+        if (supernovaSessions.length > 0) {
+          virtualCalendarData[dateKey].push({
+            trackDetails: {
+              title: 'Supernova',
+              roomName: 'Supernova Stage',
+              trackDate: dateKey,
+              order: 1,
+            },
+            records: supernovaSessions
+          });
+        }
+
+        // Create Galaxy track
+        if (galaxySessions.length > 0) {
+          virtualCalendarData[dateKey].push({
+            trackDetails: {
+              title: 'Galaxy',
+              roomName: 'Galaxy Stage',
+              trackDate: dateKey,
+              order: 2,
+            },
+            records: galaxySessions
+          });
+        }
       }
     });
 
@@ -112,6 +132,17 @@ useEffect(() => {
   const startPlaceholder = 'Thu, Oct 7';
   const endPlaceholder = 'Fri, Nov 15';
   const ensuredCalendarData = ensureMinimumEntries(processedCalendarData, startPlaceholder, endPlaceholder);
+
+  // Use custom virtual schedule component for virtual events
+  if (capacityFilter === 'Virtual') {
+    return (
+      <>
+        <div style={{ paddingBottom: '2rem', display: 'grid', rowGap: '3rem' }}>
+          <ScheduleVirtualBuenosAires calendarData={ensuredCalendarData} scheduleId={'schedule-buenos-aires'} />
+        </div>
+      </>
+    );
+  }
 
   return (
     <>

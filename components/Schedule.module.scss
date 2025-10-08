@@ -34,6 +34,21 @@
   border-radius: var(--border-radius-small);
 }
 
+.stageHeading {
+  display: flex;
+  width: 100%;
+  min-width: 150px;
+  background-color: #e0e0e0;
+  color: var(--color-black);
+  gap: 3rem;
+  padding: 0.9rem 0.75rem;
+  justify-content: space-between;
+  font-size: var(--font-size-regular);
+  border-radius: var(--border-radius-small);
+  font-weight: var(--font-weight-regular);
+  font-family: inherit;
+}
+
 .hideEmptyHeadingsMobile {
   @media (max-width: 768px) {
     display: none;
