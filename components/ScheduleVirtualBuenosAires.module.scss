@@ -20,25 +20,25 @@
   }
 }
 
-// Override eventBox heights - reduced by 20% for FDS-7
+// Override eventBox heights - reduced by 10% for FDS-7
 .eventBox {
   height: auto;
-  min-height: 160px;
+  min-height: 180px;
 
   @media (max-width: 1440px) {
-    min-height: 168px;
+    min-height: 189px;
   }
 
   @media (max-width: 1140px) {
-    min-height: 208px;
+    min-height: 234px;
   }
 
   @media (max-width: 1024px) {
-    min-height: 208px;
+    min-height: 234px;
   }
 
   @media (max-width: 768px) {
-    min-height: 200px;
+    min-height: 225px;
   }
 }
 

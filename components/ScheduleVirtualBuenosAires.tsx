@@ -113,6 +113,9 @@ export default function ScheduleVirtualBuenosAires({ calendarData, scheduleId })
             const supernovaTrack = (tracksForDate as any[]).find(t => t.trackDetails?.title === 'Supernova');
             const galaxyTrack = (tracksForDate as any[]).find(t => t.trackDetails?.title === 'Galaxy');
 
+            // Check if this is October 16 (show both columns) or October 17 (show only Supernova)
+            const isOct16 = dateKey.includes('October 16') || dateKey.includes('Oct 16');
+
             return (
               <div key={index} className={`${styles.eventStyle} ${hasItems ? '' : styles.hideItems}`}>
                 <div
@@ -124,9 +127,59 @@ export default function ScheduleVirtualBuenosAires({ calendarData, scheduleId })
                   <p>{dateKey}</p>
                 </div>
 
-                {/* Split tracks into two columns */}
-                <div className={styles.twoColumnGrid}>
-                  {/* Supernova Column */}
+                {/* Oct 16: Two columns (Supernova + Galaxy), Oct 17: Single full-width column (Supernova only) */}
+                {isOct16 ? (
+                  <div className={styles.twoColumnGrid}>
+                    {/* Supernova Column */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                      {/* Stage header */}
+                      <div className={styles.stageHeading}>
+                        <p>Supernova Stage</p>
+                      </div>
+                      {/* Sessions */}
+                      {supernovaTrack?.records?.map((session, sessionIndex) => {
+                        const { title, firstName, fullName, roomName, time, capacity } = session ?? '';
+                        return (
+                          <div className={styles.eventBox} key={sessionIndex} onClick={() => handleEventClick({ ...session, trackDesc: session.desc, trackDate: dateKey, records: [] })} onScroll={handleScroll}>
+                            {title && <p className={styles.eventName}>{title}</p>}
+                            <div className={styles.eventDetails}>
+                              {time && <p className={styles.time}>{time}</p>}
+                              {roomName && <p className={styles.location}>{roomName}</p>}
+                              {firstName && <p className={styles.speakers}> {firstName}</p>}
+                              {fullName && <p className={styles.speakers}> {fullName}</p>}
+                              {capacity && <p className={styles.people}>👤 {capacity}</p>}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* Galaxy Column */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                      {/* Stage header */}
+                      <div className={styles.stageHeading}>
+                        <p>Galaxy Stage</p>
+                      </div>
+                      {/* Sessions */}
+                      {galaxyTrack?.records?.map((session, sessionIndex) => {
+                        const { title, firstName, fullName, roomName, time, capacity } = session ?? '';
+                        return (
+                          <div className={styles.eventBox} key={sessionIndex} onClick={() => handleEventClick({ ...session, trackDesc: session.desc, trackDate: dateKey, records: [] })} onScroll={handleScroll}>
+                            {title && <p className={styles.eventName}>{title}</p>}
+                            <div className={styles.eventDetails}>
+                              {time && <p className={styles.time}>{time}</p>}
+                              {roomName && <p className={styles.location}>{roomName}</p>}
+                              {firstName && <p className={styles.speakers}> {firstName}</p>}
+                              {fullName && <p className={styles.speakers}> {fullName}</p>}
+                              {capacity && <p className={styles.people}>👤 {capacity}</p>}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ) : (
+                  /* Oct 17: Full-width Supernova column only */
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     {/* Stage header */}
                     <div className={styles.stageHeading}>
@@ -149,31 +202,7 @@ export default function ScheduleVirtualBuenosAires({ calendarData, scheduleId })
                       );
                     })}
                   </div>
-
-                  {/* Galaxy Column */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                    {/* Stage header */}
-                    <div className={styles.stageHeading}>
-                      <p>Galaxy Stage</p>
-                    </div>
-                    {/* Sessions */}
-                    {galaxyTrack?.records?.map((session, sessionIndex) => {
-                      const { title, firstName, fullName, roomName, time, capacity } = session ?? '';
-                      return (
-                        <div className={styles.eventBox} key={sessionIndex} onClick={() => handleEventClick({ ...session, trackDesc: session.desc, trackDate: dateKey, records: [] })} onScroll={handleScroll}>
-                          {title && <p className={styles.eventName}>{title}</p>}
-                          <div className={styles.eventDetails}>
-                            {time && <p className={styles.time}>{time}</p>}
-                            {roomName && <p className={styles.location}>{roomName}</p>}
-                            {firstName && <p className={styles.speakers}> {firstName}</p>}
-                            {fullName && <p className={styles.speakers}> {fullName}</p>}
-                            {capacity && <p className={styles.people}>👤 {capacity}</p>}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
+                )}
               </div>
             );
           })}
