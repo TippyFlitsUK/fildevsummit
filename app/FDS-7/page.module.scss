@@ -1,0 +1,22 @@
+// FDS-7 Buenos Aires specific styles
+// Override the default 2-column ticket grid to show 3 cards in one row
+
+.FDS7Page {
+  // Target any div with a class containing "Tickets_row" from Tickets.module.scss
+  :global(div[class*="Tickets_row"]) {
+    grid-template-columns: repeat(3, 1fr) !important;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  // Set consistent min-height for all ticket cards
+  :global(div[class*="Tickets_column"]) {
+    min-height: 280px;
+  }
+}

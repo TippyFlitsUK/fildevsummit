@@ -45,14 +45,14 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
             name: 'FDS-7: Buenos Aires - Virtual Sessions',
             backgroundColor: 'white',
             textColor: 'black',
-            description: '</br></br>Register for FDS-7: Buenos Aires virtual sessions<br>October 16-17, 2025 (11AM to 3PM ET daily)</br>',
+            description: '</br></br>All recordings are now live - <span style="color:red;">check them out here</span>.</br></br>',
             cta: {
               type: CallToActionVariantEnum.BUTTON,
               target: '_blank',
               buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
               textColor: 'white',
-              text: 'Register',
-              link: 'https://events.zoom.us/ev/AqlQpbuJ_rxk_SUKcZ8_yHWV0RIjo4Y2Z4lI5QYpaz_uwNK38ikG~AnKGnxGBk2m1zd1NuYJADtpPFJUoxTwCJ4hHHAenUtJq18UIbsESZfjLAA',
+              text: 'Watch the Sessions',
+              link: 'https://www.youtube.com/playlist?list=PL_0VrY55uV180oE5CLIMr0VmFksA3z9SH',
             },
           },              
           {
@@ -71,7 +71,25 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
               text: 'Register',
               link: 'https://lu.ma/lql41ipv',
             },
-          },     
+          },
+          {
+            id: 'media',
+            type: BlockTypeEnum.TICKET_CARD,
+            backgroundColor: 'white',
+            textColor: 'black',
+            price: '',
+            name: 'Hosted Builders',
+            description:
+              '</br>This program is designed to provide opportunities for individuals from underrepresented communities, unique circumstances, or developing areas to participate in FIL Dev Summit.',
+            cta: {
+              type: CallToActionVariantEnum.BORDER,
+              buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+              textColor: 'white',
+              target: '_blank',
+              text: 'Hosted Builder Application',
+              link: 'https://airtable.com/apps2ObNl4B1MzBrr/shrw4gRsQJXe8FnYy',
+            },
+          },
         ],
       },
     ],
@@ -128,35 +146,6 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
     ],
   },
 {
-  id: 'schedule-buenos-aires-virtual',
-  direction: BlockDirectionEnum.COLUMN,
-  title: 'Virtual Event Schedule',
-  description: 'Sessions available for virtual participation',
-  cta: {
-    type: CallToActionVariantEnum.BORDER,
-    textColor: 'var(--color-blue)',
-    target: '_blank',
-    text: 'View the Schedule in a List',
-    buttonColor: 'white',
-    link: '/FDS-7/list',
-  },
-  cta2: {
-    type: CallToActionVariantEnum.BUTTON,
-    textColor: 'white',
-    target: '_blank',
-    text: 'Submit a Talk for FDS-7: Buenos Aires',
-    buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
-    link: 'https://airtable.com/apps2ObNl4B1MzBrr/shrNF079S9pwQO3pz',
-  },
-  block: [
-    {
-      type: BlockTypeEnum.SCHEDULE_BUENOS_AIRES,
-      scheduleData: FIL_DEV_SUMMIT_BUENOS_AIRES,
-      capacityFilter: 'Virtual',
-    },
-  ],
-},
-{
   id: 'schedule-buenos-aires',
   direction: BlockDirectionEnum.COLUMN,
   title: 'In-Person Event Schedule',
@@ -186,10 +175,42 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
   ],
 },
 {
+  id: 'schedule-buenos-aires-virtual',
+  direction: BlockDirectionEnum.COLUMN,
+  block: [
+    {
+      type: BlockTypeEnum.COLLAPSABLE_SCHEDULE,
+      title: 'Virtual Event Schedule',
+      description: 'Sessions available for virtual participation',
+      backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+      textColor: 'white',
+      scheduleData: FIL_DEV_SUMMIT_BUENOS_AIRES,
+      capacityFilter: 'Virtual',
+      cta: {
+        type: CallToActionVariantEnum.BORDER,
+        textColor: 'var(--color-blue)',
+        target: '_blank',
+        text: 'View the Schedule in a List',
+        buttonColor: 'white',
+        link: '/FDS-7/list',
+      },
+      cta2: {
+        type: CallToActionVariantEnum.BUTTON,
+        textColor: 'white',
+        target: '_blank',
+        text: 'Submit a Talk for FDS-7: Buenos Aires',
+        buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+        link: 'https://airtable.com/apps2ObNl4B1MzBrr/shrNF079S9pwQO3pz',
+      },
+    },
+  ],
+},
+{
   id: 'speakers-buenos-aires',
   direction: BlockDirectionEnum.COLUMN,
   title: 'Event Speakers',
   description: 'Featured speakers at FDS-7: Buenos Aires',
+  style: { marginTop: '-5rem' },
   block: [
     {
       type: BlockTypeEnum.SPEAKERS_BUENOS_AIRES,
@@ -222,7 +243,7 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
           {
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'How can I participate at FIL Dev Summit?',
-            collapsedText: `In-person registration is now open! [Register here](https://lu.ma/lql41ipv) - spaces are limited!</br></br>Virtual session registration is now open! [Register here](https://events.zoom.us/ev/AqlQpbuJ_rxk_SUKcZ8_yHWV0RIjo4Y2Z4lI5QYpaz_uwNK38ikG~AnKGnxGBk2m1zd1NuYJADtpPFJUoxTwCJ4hHHAenUtJq18UIbsESZfjLAA) - free to attend!</br></br>We also offer multiple levels of sponsorship. For sponsorship opportunities, please email [sponsorships@fil.org](mailto:sponsorships@fil.org).</br></br>Finally, add the slack channel: #fil-dev-summit in [Filecoin Slack](https://filecoinproject.slack.com/archives/C05LHC1ULG1).`,
+            collapsedText: `In-person registration is now open! [Register here](https://lu.ma/lql41ipv) - spaces are limited!</br></br>Virtual session registration is now open! [Register here](https://events.zoom.us/ev/AqlQpbuJ_rxk_SUKcZ8_yHWV0RIjo4Y2Z4lI5QYpaz_uwNK38ikG~AnKGnxGBk2m1zd1NuYJADtpPFJUoxTwCJ4hHHAenUtJq18UIbsESZfjLAA) - free to attend!</br></br>Our Hosted Builders program is designed to provide opportunities for individuals from underrepresented communities, unique circumstances, or developing areas to participate in FIL Dev Summit. [Submit your Hosted Builder application](https://airtable.com/apps2ObNl4B1MzBrr/shrw4gRsQJXe8FnYy)</br></br>We also offer multiple levels of sponsorship. For sponsorship opportunities, please email [sponsorships@fil.org](mailto:sponsorships@fil.org).</br></br>Finally, add the slack channel: #fil-dev-summit in [Filecoin Slack](https://filecoinproject.slack.com/archives/C05LHC1ULG1).`,
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {

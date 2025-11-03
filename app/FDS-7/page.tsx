@@ -1,4 +1,5 @@
 import '@root/global.scss';
+import styles from './page.module.scss';
 
 import {
   FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_HERO_CONTENT,
@@ -83,7 +84,7 @@ const promises = blocks?.flatMap((contentItem) =>
   await Promise.all(promises);
 
   return (
-    <div style={{ background: pageStyle.backgroundColor, color: pageStyle.textColor }}>
+    <div className={styles.FDS7Page} style={{ background: pageStyle.backgroundColor, color: pageStyle.textColor }}>
       <ResponsiveNavbar navContent={navContent} />
 
       <div style={{ paddingBottom: '4rem' }}>
