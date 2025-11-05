@@ -5,7 +5,7 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_HERO_CONTENT = {
   type: BlockTypeEnum.HERO_NO_BACKGROUND,
   title: 'FDS-7: Buenos Aires',
   description:
-    "FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!). This summit is more than just a meetup—it's a place for meaningful and impactful conversations that help push Filecoin forward. <br><br><b>Join the Virtual FIL Dev Summit Kickoff Sessions to dive deep on new improvements and proposals across the Filecoin community!</b> These 2-3 hour virtual sessions will spotlight new opportunities, learnings, and ideas across the Filecoin community to make Filecoin better & stronger, unlocking deeper discussions on the road to FDS-7 in Buenos Aires. These virtual FDS kickoff sessions will each center on a key focus area to jumpstart the conversation on ambitious new improvements for 2026 and beyond, bringing the whole community together to evolve Filecoin's future growth.<br><br>In-person sessions: November 13-15, 2025 in Buenos Aires<br>Virtual sessions: October 16-17, 2025 (11AM to 3PM ET daily)",
+    "FIL Dev Summit is a gathering of developers, builders, and engaged community members who want to contribute to the core protocol and network evolution of Filecoin (think IPFS Thing, but bigger!). This summit is more than just a meetup—it's a place for meaningful and impactful conversations that help push Filecoin forward. <br><br><b>Join the Virtual FIL Dev Summit Kickoff Sessions to dive deep on new improvements and proposals across the Filecoin community!</b> These 2-3 hour virtual sessions will spotlight new opportunities, learnings, and ideas across the Filecoin community to make Filecoin better & stronger, unlocking deeper discussions on the road to FDS-7 in Buenos Aires. These virtual FDS kickoff sessions will each center on a key focus area to jumpstart the conversation on ambitious new improvements for 2026 and beyond, bringing the whole community together to evolve Filecoin's future growth.<br><br>In-person sessions: November 13-15, 2025 at <a href='https://aleph.crecimiento.build/' target='_blank'>Aleph Hub</a> in Buenos Aires<br>Virtual sessions: October 16-17, 2025 (11AM to 3PM ET daily)",
 };
 
 export const FILECOIN_DEV_SUMMIT_PAGE_STYLE_CONTENT = {
@@ -249,7 +249,7 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
           {
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'What is the venue for FDS-7: Buenos Aires?',
-            collapsedText: 'The FDS Buenos Aires in-person event takes place on November 13-15, 2025. Venue details coming soon.<br><br>Virtual sessions will run from October 16-17, 2025 (11AM to 3PM ET daily) via Zoom.',
+            collapsedText: 'The FDS Buenos Aires in-person event takes place on November 13-15, 2025, at [Aleph Hub](https://aleph.crecimiento.build/) in Buenos Aires, Argentina. Aleph Hub is a vibrant, open coworking space for builders, founders, and dreamers.<br><br>Virtual sessions will run from October 16-17, 2025 (11AM to 3PM ET daily) via Zoom.',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
         ],

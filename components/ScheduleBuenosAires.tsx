@@ -4,6 +4,7 @@ import { ensureMinimumEntries, formatAirtableMetaData, getFormattedAirtableField
 import { useState, useEffect } from 'react';
 import Schedule from './Schedule';
 import ScheduleVirtualBuenosAires from './ScheduleVirtualBuenosAires';
+import ScheduleIRLBuenosAires from './ScheduleIRLBuenosAires';
 const NODE = process.env.NODE_ENV || 'development';
 const IS_PRODUCTION = NODE === 'production';
 if (!IS_PRODUCTION) {
@@ -66,7 +67,7 @@ useEffect(() => {
 
   if (capacityFilter === 'Virtual') {
     // For virtual schedule: group sessions into Supernova and Galaxy stages per date
-    const formattedAirtableData = getFormattedAirtableFields(buenosAiresData);
+    const formattedAirtableData = getFormattedAirtableFields(buenosAiresData, true);
 
     // Create a new structure with 2 tracks per date: Supernova and Galaxy
     const virtualCalendarData: any = {};
@@ -123,9 +124,44 @@ useEffect(() => {
     });
 
     processedCalendarData = sortCalendarDataByDate(virtualCalendarData);
+  } else if (capacityFilter === 'In Person') {
+    // For IRL schedule: flatten all sessions into a single array per date
+    const formattedAirtableData = getFormattedAirtableFields(buenosAiresData, true);
+
+    // Create a new structure with all IRL sessions flattened into a single "track" per date
+    const irlCalendarData: any = {};
+
+    Object.entries(formattedAirtableData).forEach(([dateKey, tracksForDate]: [string, any]) => {
+      if (Array.isArray(tracksForDate)) {
+        irlCalendarData[dateKey] = [];
+
+        // Collect all sessions from all tracks for this date
+        const allSessions: any[] = [];
+        tracksForDate.forEach((track: any) => {
+          if (track.records && Array.isArray(track.records)) {
+            allSessions.push(...track.records);
+          }
+        });
+
+        // Create a single "IRL Sessions" track with all sessions
+        if (allSessions.length > 0) {
+          irlCalendarData[dateKey].push({
+            trackDetails: {
+              title: 'IRL Sessions',
+              roomName: 'In-Person',
+              trackDate: dateKey,
+              order: 1,
+            },
+            records: allSessions
+          });
+        }
+      }
+    });
+
+    processedCalendarData = sortCalendarDataByDate(irlCalendarData);
   } else {
-    // For in-person schedule: keep the original track-based structure
-    const formattedAirtableData = getFormattedAirtableFields(buenosAiresData);
+    // Fallback: keep the original track-based structure
+    const formattedAirtableData = getFormattedAirtableFields(buenosAiresData, true);
     processedCalendarData = sortCalendarDataByDate(formattedAirtableData);
   }
 
@@ -133,7 +169,7 @@ useEffect(() => {
   const endPlaceholder = 'Fri, Nov 15';
   const ensuredCalendarData = ensureMinimumEntries(processedCalendarData, startPlaceholder, endPlaceholder);
 
-  // Use custom virtual schedule component for virtual events
+  // Use custom components for virtual and IRL events
   if (capacityFilter === 'Virtual') {
     return (
       <>
@@ -144,6 +180,17 @@ useEffect(() => {
     );
   }
 
+  if (capacityFilter === 'In Person') {
+    return (
+      <>
+        <div style={{ paddingBottom: '2rem', display: 'grid', rowGap: '3rem' }}>
+          <ScheduleIRLBuenosAires calendarData={ensuredCalendarData} scheduleId={'schedule-buenos-aires'} />
+        </div>
+      </>
+    );
+  }
+
+  // Fallback to regular Schedule component for any other filter
   return (
     <>
       <div style={{ paddingBottom: '2rem', display: 'grid', rowGap: '3rem' }}>
