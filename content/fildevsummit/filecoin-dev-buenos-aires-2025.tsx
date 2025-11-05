@@ -159,12 +159,12 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
     link: '/FDS-7/list',
   },
   cta2: {
-    type: CallToActionVariantEnum.BUTTON,
+    type: CallToActionVariantEnum.DISABLED,
     textColor: 'white',
     target: '_blank',
     text: 'Submit a Talk for FDS-7: Buenos Aires',
     buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
-    link: 'https://airtable.com/apps2ObNl4B1MzBrr/shrNF079S9pwQO3pz',
+    link: '#',
   },
   block: [
     {
@@ -195,12 +195,12 @@ export const FILECOIN_DEV_SUMMIT_BUENOS_AIRES_2025_PAGE_CONTENT = [
         link: '/FDS-7/list',
       },
       cta2: {
-        type: CallToActionVariantEnum.BUTTON,
+        type: CallToActionVariantEnum.DISABLED,
         textColor: 'white',
         target: '_blank',
         text: 'Submit a Talk for FDS-7: Buenos Aires',
         buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
-        link: 'https://airtable.com/apps2ObNl4B1MzBrr/shrNF079S9pwQO3pz',
+        link: '#',
       },
     },
   ],
