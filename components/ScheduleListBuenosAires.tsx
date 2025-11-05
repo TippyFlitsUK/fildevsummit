@@ -18,7 +18,15 @@ export default function ScheduleListBuenosAires({ scheduleData }) {
         try {
           const formattedAirtableData = formatAirtableMetaData(scheduleData?.airtable?.data);
 
-          setEventData(formattedAirtableData);
+          // Filter for IRL (In Person) sessions only
+          const irlData = formattedAirtableData.filter(item => {
+            if (Array.isArray(item.irlVirtual)) {
+              return item.irlVirtual.includes('In Person');
+            }
+            return false;
+          });
+
+          setEventData(irlData);
 
           setLoading(false);
         } catch (e) {
@@ -33,14 +41,34 @@ export default function ScheduleListBuenosAires({ scheduleData }) {
 
   if (!eventData) return null;
 
-  const cleanedAirtableData = getFormattedAirtableFields(eventData);
-  const formattedAirtableData = sortCalendarDataByDate(cleanedAirtableData);
+  // Flatten sessions - don't group by tracks, just get individual sessions
+  const cleanedAirtableData = getFormattedAirtableFields(eventData, true);
+
+  // Extract all individual sessions and organize by date only
+  const flattenedSessions: any = {};
+
+  Object.entries(cleanedAirtableData).forEach(([dateKey, tracksForDate]: [string, any]) => {
+    if (Array.isArray(tracksForDate)) {
+      flattenedSessions[dateKey] = [];
+
+      // Collect all sessions from all tracks for this date
+      tracksForDate.forEach((track: any) => {
+        if (track.records && Array.isArray(track.records)) {
+          flattenedSessions[dateKey].push(...track.records);
+        }
+      });
+    }
+  });
+
+  const formattedAirtableData = sortCalendarDataByDate(flattenedSessions);
 
   if (!formattedAirtableData) return null;
 
   return (
     <>
-      {Object?.entries(formattedAirtableData)?.map(([date, events]: any, dateIndex) => {
+      {Object?.entries(formattedAirtableData)?.map(([date, sessions]: any, dateIndex) => {
+        // sessions is now a flat array of individual sessions, not tracks
+        if (!sessions || sessions.length === 0) return null;
 
         return (
           <div key={date} className={styles.list} style={{ marginTop: dateIndex === 0 ? 0 : '3rem' }}>
@@ -50,6 +78,47 @@ export default function ScheduleListBuenosAires({ scheduleData }) {
               </h2>
             )}
 
+            <div className={styles.border} style={{ padding: '2rem', display: 'grid', rowGap: '0.75rem' }}>
+              {/* Header row */}
+              <div className={classNames(styles.grid2Cols, styles.scheduleRow)}>
+                <p className={classNames(styles.col20, styles.scheduleRowTitle)}>Time</p>
+                <p className={classNames(styles.col25, styles.scheduleRowTitle)}>Title</p>
+                <p className={classNames(styles.col15, styles.scheduleRowTitle)}>Speakers</p>
+                <p className={classNames(styles.col40, styles.scheduleRowTitle)}>Description</p>
+              </div>
+
+              {/* Individual session rows */}
+              {sessions.map((session, index) => {
+                return (
+                  <div key={index}>
+                    <div
+                      className={classNames(styles.grid2Cols, styles.borderTalksContainer)}
+                      style={{ borderBottom: index === sessions.length - 1 ? 'none' : '0.5px solid var(--color-blue-gray)' }}
+                    >
+                      <p className={classNames(styles.col20, styles.desc, styles.timeCell)}>{session.time || '─'}</p>
+                      <p className={classNames(styles.col25, styles.desc)}>{session?.title || '─'}</p>
+                      <p className={classNames(styles.col15, styles.desc)}>{session?.firstName || session?.fullName || '─'}</p>
+                      <p className={classNames(styles.col40, styles.desc)} style={{ display: 'grid', rowGap: '1rem' }}>
+                        {session?.desc && <p>{session.desc}</p>}
+
+                        {session?.videoLink && session?.videoStatus === 'Approved' && (
+                          <span>
+                            <a target="_blank" href={session.videoLink} style={{ textDecoration: 'none' }}>
+                              <button className={styles.videoLinkButton}>
+                                <VideoPlayerSVG className={styles.videoLinkSVG} />
+                                View Video
+                              </button>
+                            </a>
+                          </span>
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* COMMENTED OUT: Virtual event display logic
             {events &&
               (events as any).map((event, index) => {
                 // Skip "Virtual FIL Dev Summit Day" container tracks
@@ -116,6 +185,7 @@ export default function ScheduleListBuenosAires({ scheduleData }) {
                   </div>
                 );
               })}
+            */}
           </div>
         );
       })}
