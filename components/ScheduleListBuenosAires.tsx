@@ -19,12 +19,12 @@ export default function ScheduleListBuenosAires({ scheduleData }) {
           const formattedAirtableData = formatAirtableMetaData(scheduleData?.airtable?.data);
 
           // Filter for IRL (In Person) sessions only
-          const irlData = formattedAirtableData.filter(item => {
+          const irlData = formattedAirtableData ? formattedAirtableData.filter(item => {
             if (Array.isArray(item.irlVirtual)) {
               return item.irlVirtual.includes('In Person');
             }
             return false;
-          });
+          }) : [];
 
           setEventData(irlData);
 
