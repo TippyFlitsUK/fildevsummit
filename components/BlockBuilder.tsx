@@ -40,7 +40,7 @@ export default function BlockBuilder({ block, cta, cta2, title, subtitle, id, bo
 
           <div>
             {cta && <CallToActionVariant cta={cta} type={cta.type} />}
-            {cta2 && <CallToActionVariant cta={cta2} type={cta.type} />}
+            {cta2 && <CallToActionVariant cta={cta2} type={cta2.type} />}
           </div>
         </section>
       )}
