@@ -5,6 +5,47 @@ import { SchedulePopUp } from './SchedulePopUp';
 import { classNames, cleanString } from '@root/common/utilities';
 import getScheduleGrid from 'system/layout/Grids';
 
+// Palette of light colors for room distinction
+const ROOM_COLOR_PALETTE = [
+  '#e3f2fd',  // Light Blue
+  '#e8f5e9',  // Light Green
+  '#fff3e0',  // Light Orange
+  '#f3e5f5',  // Light Purple
+  '#fff9c4',  // Light Yellow
+  '#e0f2f1',  // Light Cyan
+  '#fce4ec',  // Light Pink
+  '#f1f8e9',  // Light Lime
+];
+
+// Generate consistent color for a single room name
+const getColorForRoom = (room: string) => {
+  let hash = 0;
+  for (let i = 0; i < room.length; i++) {
+    hash = room.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const index = Math.abs(hash) % ROOM_COLOR_PALETTE.length;
+  return ROOM_COLOR_PALETTE[index];
+};
+
+// Generate background (solid or diagonal split for multiple rooms)
+const getRoomColor = (roomName: any) => {
+  if (!roomName) return '#f5f5f5';
+
+  // Handle array of multiple rooms
+  if (Array.isArray(roomName)) {
+    if (roomName.length === 0) return '#f5f5f5';
+    if (roomName.length === 1) return getColorForRoom(String(roomName[0]));
+
+    // Multiple rooms - create diagonal split (corner to corner)
+    const color1 = getColorForRoom(String(roomName[0]));
+    const color2 = getColorForRoom(String(roomName[1]));
+    return `linear-gradient(to bottom right, ${color1} 50%, ${color2} 50%)`;
+  }
+
+  // Single room as string
+  return getColorForRoom(String(roomName));
+};
+
 export default function ScheduleIRLBuenosAires({ calendarData, scheduleId }) {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
@@ -129,11 +170,11 @@ export default function ScheduleIRLBuenosAires({ calendarData, scheduleId }) {
                   {irlTrack?.records?.map((session, sessionIndex) => {
                     const { title, firstName, fullName, roomName, time, capacity } = session ?? '';
                     return (
-                      <div className={styles.eventBox} key={sessionIndex} onClick={() => handleEventClick({ ...session, trackDesc: session.desc, trackDate: dateKey, records: [] })} onScroll={handleScroll}>
+                      <div className={styles.eventBox} key={sessionIndex} onClick={() => handleEventClick({ ...session, trackDesc: session.desc, trackDate: dateKey, records: [] })} onScroll={handleScroll} style={{ background: getRoomColor(roomName) }}>
                         {title && <p className={styles.eventName}>{title}</p>}
                         <div className={styles.eventDetails}>
                           {time && <p className={styles.time}>{time}</p>}
-                          {roomName && <p className={styles.location}>{roomName}</p>}
+                          {roomName && <p className={styles.location}>{Array.isArray(roomName) ? roomName.join(' • ') : roomName}</p>}
                           {firstName && <p className={styles.speakers}> {firstName}</p>}
                           {fullName && <p className={styles.speakers}> {fullName}</p>}
                           {capacity && <p className={styles.people}>👤 {capacity}</p>}

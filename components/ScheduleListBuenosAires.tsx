@@ -8,6 +8,47 @@ import Loading from './Loading';
 
 import VideoPlayerSVG from './svgs/VideoPlayerSVG';
 
+// Palette of light colors for room distinction
+const ROOM_COLOR_PALETTE = [
+  '#e3f2fd',  // Light Blue
+  '#e8f5e9',  // Light Green
+  '#fff3e0',  // Light Orange
+  '#f3e5f5',  // Light Purple
+  '#fff9c4',  // Light Yellow
+  '#e0f2f1',  // Light Cyan
+  '#fce4ec',  // Light Pink
+  '#f1f8e9',  // Light Lime
+];
+
+// Generate consistent color for a single room name
+const getColorForRoom = (room: string) => {
+  let hash = 0;
+  for (let i = 0; i < room.length; i++) {
+    hash = room.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const index = Math.abs(hash) % ROOM_COLOR_PALETTE.length;
+  return ROOM_COLOR_PALETTE[index];
+};
+
+// Generate background (solid or diagonal split for multiple rooms)
+const getRoomColor = (roomName: any) => {
+  if (!roomName) return '#f5f5f5';
+
+  // Handle array of multiple rooms
+  if (Array.isArray(roomName)) {
+    if (roomName.length === 0) return '#f5f5f5';
+    if (roomName.length === 1) return getColorForRoom(String(roomName[0]));
+
+    // Multiple rooms - create diagonal split (corner to corner)
+    const color1 = getColorForRoom(String(roomName[0]));
+    const color2 = getColorForRoom(String(roomName[1]));
+    return `linear-gradient(to bottom right, ${color1} 50%, ${color2} 50%)`;
+  }
+
+  // Single room as string
+  return getColorForRoom(String(roomName));
+};
+
 export default function ScheduleListBuenosAires({ scheduleData }) {
   const [eventData, setEventData] = useState<any[] | null>(null);
   const [isLoading, setLoading] = useState(true);
@@ -81,10 +122,11 @@ export default function ScheduleListBuenosAires({ scheduleData }) {
             <div className={styles.border} style={{ padding: '2rem', display: 'grid', rowGap: '0.75rem' }}>
               {/* Header row */}
               <div className={classNames(styles.grid2Cols, styles.scheduleRow)}>
-                <p className={classNames(styles.col20, styles.scheduleRowTitle)}>Time</p>
+                <p className={classNames(styles.col15, styles.scheduleRowTitle)}>Time</p>
                 <p className={classNames(styles.col25, styles.scheduleRowTitle)}>Title</p>
+                <p className={classNames(styles.col15, styles.scheduleRowTitle)}>Room</p>
                 <p className={classNames(styles.col15, styles.scheduleRowTitle)}>Speakers</p>
-                <p className={classNames(styles.col40, styles.scheduleRowTitle)}>Description</p>
+                <p className={classNames(styles.col25, styles.scheduleRowTitle)}>Description</p>
               </div>
 
               {/* Individual session rows */}
@@ -93,12 +135,13 @@ export default function ScheduleListBuenosAires({ scheduleData }) {
                   <div key={index}>
                     <div
                       className={classNames(styles.grid2Cols, styles.borderTalksContainer)}
-                      style={{ borderBottom: index === sessions.length - 1 ? 'none' : '0.5px solid var(--color-blue-gray)' }}
+                      style={{ borderBottom: index === sessions.length - 1 ? 'none' : '0.5px solid var(--color-blue-gray)', background: getRoomColor(session.roomName) }}
                     >
-                      <p className={classNames(styles.col20, styles.desc, styles.timeCell)}>{session.time || '─'}</p>
+                      <p className={classNames(styles.col15, styles.desc, styles.timeCell)}>{session.time || '─'}</p>
                       <p className={classNames(styles.col25, styles.desc)}>{session?.title || '─'}</p>
+                      <p className={classNames(styles.col15, styles.desc)}>{session?.roomName ? (Array.isArray(session.roomName) ? session.roomName.join(' • ') : session.roomName) : '─'}</p>
                       <p className={classNames(styles.col15, styles.desc)}>{session?.firstName || session?.fullName || '─'}</p>
-                      <p className={classNames(styles.col40, styles.desc)} style={{ display: 'grid', rowGap: '1rem' }}>
+                      <p className={classNames(styles.col25, styles.desc)} style={{ display: 'grid', rowGap: '1rem' }}>
                         {session?.desc && <p>{session.desc}</p>}
 
                         {session?.videoLink && session?.videoStatus === 'Approved' && (
