@@ -75,11 +75,11 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             type: BlockTypeEnum.MEDIA,
             media: {
               type: TypeName.IMAGE_WITH_OVERLAY_TEXT,
-              src: '/media/ba5.jpg',
-              ariaLabel: 'FDS-7: Buenos Aires',
-              link: '/FDS-7',
-              title: 'FDS-7: Buenos Aires',
-              subtitle: 'In-Person: Nov 13-15 | Virtual: Oct 16-17, 2025',
+              src: '/media/nyc1.jpg',
+              ariaLabel: 'FDS-8: New York',
+              link: '/FDS-8',
+              title: 'FDS-8: New York',
+              subtitle: 'June 9-11, 2026',
               rightSubheading: 'Organized by FilOz & Filecoin Foundation',
             },
           },
@@ -103,6 +103,19 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             type: BlockTypeEnum.MEDIA,
             media: {
               type: TypeName.IMAGE_WITH_OVERLAY_TEXT,
+              src: '/media/ba5.jpg',
+              ariaLabel: 'FDS-7: Buenos Aires',
+              link: '/FDS-7',
+              title: 'FDS-7: Buenos Aires',
+              subtitle: 'November 13-15, 2025',
+              rightSubheading: 'Organized by FilOz & Filecoin Foundation',
+            },
+          },
+           {
+            id: 'past-events',
+            type: BlockTypeEnum.MEDIA,
+            media: {
+              type: TypeName.IMAGE_WITH_OVERLAY_TEXT,
               src: '/media/Toronto-3.jpg',
               ariaLabel: 'FDS-6: Toronto',
               link: '/FDS-6',
@@ -110,7 +123,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
               subtitle: 'May 12-13, 2025',
               rightSubheading: 'Organized by FilOz & Filecoin Foundation',
             },
-          },               
+          },
            {
             id: 'past-events',
             type: BlockTypeEnum.MEDIA,
@@ -180,6 +193,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
       },
     ],
   },
+  /* Repeated full-width past-event sections (Bangkok / Brussels / Denver / Iceland / Singapore) hidden — past events already shown above as rounded-corner cards.
   {
     id: 'bangkok',
     backgroundColor: 'var(--color-white)',
@@ -476,6 +490,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
       },
     ],
   },
+  */
   {
     id: 'faqs',
     title: 'FAQs',
@@ -530,7 +545,7 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'What are the venues for FIL Dev Summit?',
             collapsedText:
-              'Logistical details will be sent to you once your application has been received, approved, and you have completed the registration for this event by purchasing a ticket. The next FIL Dev Summit is FDS-7 Buenos Aires. In-person sessions take place November 13-15, 2025 in Buenos Aires (venue details will be announced soon). Virtual sessions run October 16-17, 2025 (11AM to 3PM ET daily) - [register here](https://events.zoom.us/ev/AqlQpbuJ_rxk_SUKcZ8_yHWV0RIjo4Y2Z4lI5QYpaz_uwNK38ikG~AnKGnxGBk2m1zd1NuYJADtpPFJUoxTwCJ4hHHAenUtJq18UIbsESZfjLAA) for free virtual attendance.',
+              'The next FIL Dev Summit is FDS-8: New York, taking place June 9–11, 2026 in New York City, alongside NY Tech Week and ETHConf. FDS-8 is in-person only. Venue details will be shared with confirmed attendees. Email [events@fil.org](mailto:events@fil.org) to request access.',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           // {
@@ -558,14 +573,15 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'How can I lead a track?',
             collapsedText:
-              'Track and talk submissions for upcoming FIL Dev Summit events will be announced on each event page. **FDS-7: Buenos Aires submissions are now open!** [Submit your talk here](https://airtable.com/apps2ObNl4B1MzBrr/shrNF079S9pwQO3pz). Check the individual event pages for submission forms and deadlines.',
+              'FDS-8: New York content is curated by the organizers in a shared working doc rather than open submissions. If you have ideas you would like to contribute, email [events@fil.org](mailto:events@fil.org).',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
             id: 'media',
             type: BlockTypeEnum.COLLAPSABLE,
             title: 'Is there a cost to attend?',
-            collapsedText: `Yes, there is typically a registration fee for in-person attendance. Virtual sessions for FDS-7: Buenos Aires (October 16-17, 2025, 11AM to 3PM ET daily) are free! [Register here](https://events.zoom.us/ev/AqlQpbuJ_rxk_SUKcZ8_yHWV0RIjo4Y2Z4lI5QYpaz_uwNK38ikG~AnKGnxGBk2m1zd1NuYJADtpPFJUoxTwCJ4hHHAenUtJq18UIbsESZfjLAA) to attend virtually. Please check each event page for specific pricing details.`,
+            collapsedText:
+              'FDS-8: New York is in-person only and access is by application. Space is limited. Email [events@fil.org](mailto:events@fil.org) to apply.',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
@@ -664,7 +680,7 @@ export const FILECOIN_DEV_SUMMIT_NAVIGATION_CONTENT = {
       text: 'Apply to Attend',
       buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
       textColor: 'white',
-      href: 'https://lu.ma/lql41ipv',
+      href: 'mailto:events@fil.org',
       target: '_blank',
     },
   ],
