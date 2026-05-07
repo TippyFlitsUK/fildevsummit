@@ -4,7 +4,7 @@ import styles2 from '@components/MarkdownToJSXComponents.module.scss';
 import { classNames } from '@root/common/utilities';
 
 export const MarkdownToJSXComponents = {
-  a: (props) => <a {...props} className={styles2.link} target="_blank" />,
+  a: (props) => <a {...props} className={styles2.link} target={props.href?.startsWith('mailto:') ? '_self' : '_blank'} />,
   p: (props) => <p {...props} className={styles.p} />,
   h1: (props) => <h1 {...props} className={classNames(styles.h1, styles.markdownHeadings)} />,
   h2: (props) => <h2 {...props} className={classNames(styles.h2, styles.markdownHeadings)} />,
