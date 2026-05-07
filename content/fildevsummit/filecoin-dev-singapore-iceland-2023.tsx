@@ -548,6 +548,14 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
               'The next FIL Dev Summit is FDS-8: New York, taking place June 9–11, 2026 in New York City, alongside NY Tech Week and ETHConf. FDS-8 is in-person only. Venue details will be shared with confirmed attendees. Email [events@fil.org](mailto:events@fil.org) to request access.',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
+          {
+            id: 'media',
+            type: BlockTypeEnum.COLLAPSABLE,
+            title: 'Will the sessions be recorded?',
+            collapsedText:
+              'All sessions will be recorded and uploaded to [Youtube channel](https://www.youtube.com/@FilecoinProject) ASAP. We are also encouraging everyone to join [#fil-dev-summit](https://app.slack.com/client/TEHTVS1L6/C05LHC1ULG1) in [Filecoin](https://filecoinproject.slack.com/ssb/redirect) slack to stay up to date with all hallway track conversations.',
+            backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
+          },
           // {
           //   id: 'media',
           //   type: BlockTypeEnum.COLLAPSABLE,
@@ -590,14 +598,6 @@ export const FILECOIN_DEV_SUMMIT_2023_PAGE_CONTENT = [
             title: 'How can I sponsor? What does it include?',
             collapsedText:
               'Yes! We offer multiple levels of sponsorship for each FIL Dev Summit event. For sponsorship opportunities, please email [sponsorships@fil.org](mailto:sponsorships@fil.org).',
-            backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
-          },
-          {
-            id: 'media',
-            type: BlockTypeEnum.COLLAPSABLE,
-            title: 'Will the sessions be recorded?',
-            collapsedText:
-              'All sessions will be recorded and uploaded to [Youtube channel](https://www.youtube.com/@FilecoinProject) ASAP. We are also encouraging everyone to join [#fil-dev-summit](https://app.slack.com/client/TEHTVS1L6/C05LHC1ULG1) in [Filecoin](https://filecoinproject.slack.com/ssb/redirect) slack to stay up to date with all hallway track conversations.',
             backgroundColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
           },
           {
