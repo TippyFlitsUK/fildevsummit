@@ -21,7 +21,7 @@ export const FILECOIN_DEV_SUMMIT_NEW_YORK_2026_PAGE_CONTENT = [
     description: 'Space is limited. Email events@fil.org to request access.',
     cta: {
       type: CallToActionVariantEnum.BUTTON,
-      target: '_blank',
+      target: '_self',
       buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
       textColor: 'white',
       text: 'Apply Today',
@@ -35,7 +35,7 @@ export const FILECOIN_DEV_SUMMIT_NEW_YORK_2026_PAGE_CONTENT = [
     direction: BlockDirectionEnum.COLUMN,
     cta: {
       type: CallToActionVariantEnum.BUTTON,
-      target: '_blank',
+      target: '_self',
       buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
       textColor: 'white',
       text: 'Sponsor FDS-8: New York',
@@ -198,7 +198,7 @@ export const FILECOIN_DEV_SUMMIT_NEW_YORK_2026_NAVIGATION_CONTENT = {
       buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
       textColor: 'white',
       href: 'mailto:events@fil.org',
-      target: '_blank',
+      target: '_self',
     },
   ],
 };

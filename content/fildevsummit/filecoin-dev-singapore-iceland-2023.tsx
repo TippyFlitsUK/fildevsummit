@@ -681,7 +681,7 @@ export const FILECOIN_DEV_SUMMIT_NAVIGATION_CONTENT = {
       buttonColor: 'linear-gradient(to right,#39C1CB, #006FEC)',
       textColor: 'white',
       href: 'mailto:events@fil.org',
-      target: '_blank',
+      target: '_self',
     },
   ],
 };
