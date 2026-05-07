@@ -10,6 +10,11 @@
   @media (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
   }
+
+  > div {
+    display: flex;
+    width: 100%;
+  }
 }
 
 .speakerContainer {
@@ -22,6 +27,15 @@
   gap: 1rem;
   text-decoration: none;
   height: 100%;
+  width: 100%;
+  min-height: 200px;
+  min-width: 250px;
+  transition: background 200ms ease;
+
+  &:hover {
+    background: linear-gradient(to bottom right, var(--gradient-border-blue-green-transparent));
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
 
   .logo {
     color: var(--color-blue);
@@ -105,13 +119,12 @@
   text-decoration: none;
   background: var(--color-white);
   transition: background 200ms ease;
+  display: flex;
+  width: 100%;
 
   &:hover {
     background: linear-gradient(to bottom right, var(--gradient-border-blue-green-transparent));
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-    border: 2px solid transparent;
-    border-image: linear-gradient(to bottom right, var(--gradient-border-blue-green));
-    border-image-slice: 1;
     border-radius: var(--border-radius-small);
   }
 }

@@ -60,8 +60,6 @@ export default function SPEAKERS_BUENOS_AIRES({ speakersData }: any) {
 
   return (
     <div>
-      <h1 style={{ fontSize: 'var(--font-size-large)', fontWeight: 'var(--font-weight-light' }}>Speakers</h1>
-
       <div className={styles.container}>
         <div className={styles.row}>
           {speakers.map((speaker, index) => {

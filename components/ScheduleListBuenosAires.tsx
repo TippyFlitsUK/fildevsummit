@@ -8,26 +8,18 @@ import Loading from './Loading';
 
 import VideoPlayerSVG from './svgs/VideoPlayerSVG';
 
-// Palette of light colors for room distinction
-const ROOM_COLOR_PALETTE = [
-  '#e3f2fd',  // Light Blue
-  '#e8f5e9',  // Light Green
-  '#fff3e0',  // Light Orange
-  '#f3e5f5',  // Light Purple
-  '#fff9c4',  // Light Yellow
-  '#e0f2f1',  // Light Cyan
-  '#fce4ec',  // Light Pink
-  '#f1f8e9',  // Light Lime
-];
+// Direct room name to color mapping - based on actual Airtable room names
+const ROOM_COLORS = {
+  'Auditorium': '#f3e5f5',           // Light Purple
+  'Amphitheatre': '#fce4ec',         // Light Pink
+  'Quiet Zone Table 1': '#e3f2fd',   // Light Blue
+  'Quiet Zone Table 2': '#fff3e0',   // Light Orange
+  'Quiet Zone Table  3': '#c8e6c9',  // Light Green (note: 2 spaces in name)
+};
 
-// Generate consistent color for a single room name
+// Get color for a single room name
 const getColorForRoom = (room: string) => {
-  let hash = 0;
-  for (let i = 0; i < room.length; i++) {
-    hash = room.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  const index = Math.abs(hash) % ROOM_COLOR_PALETTE.length;
-  return ROOM_COLOR_PALETTE[index];
+  return ROOM_COLORS[room] || '#f5f5f5';  // Default gray for unmapped rooms
 };
 
 // Generate background (solid or diagonal split for multiple rooms)
