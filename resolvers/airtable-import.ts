@@ -249,7 +249,7 @@ export function getTrackDetails(formattedAirtableData, trackSelected) {
   return trackDetails;
 }
 
-export function getFormattedAirtableFields(formattedAirtableData): any {
+export function getFormattedAirtableFields(formattedAirtableData, isFDS7 = false): any {
   const groupedData: any = {};
   const talkRecords: any = []; // Store all Talk records
 
@@ -278,6 +278,10 @@ export function getFormattedAirtableFields(formattedAirtableData): any {
             groupedData[formattedDate].push(existingTrack);
           }
         } else if (formattedRecord.type === 'Talk' || formattedRecord.type === 'Session') {
+          // FDS-7: Filter out sessions not confirmed for website
+          if (isFDS7 && formattedRecord.confirmedForWebsite !== true) {
+            return; // Skip this session
+          }
           // Save 'Talk' or 'Session' records for processing later
 
           talkRecords.push(formattedRecord);
@@ -309,7 +313,11 @@ export function getFormattedAirtableFields(formattedAirtableData): any {
         const trackForTalk = talk.tracks[0]; //pick the first track for now since the unique talks shows up under 1 track
 
         if (groupedData.hasOwnProperty(formattedDateForTalk)) {
-          let existingTrackForTalk = groupedData[formattedDateForTalk].find((trackData) => trackData.title === trackForTalk);
+          let existingTrackForTalk = groupedData[formattedDateForTalk].find((trackData) =>
+            isFDS7
+              ? trackData.trackDetails?.tracks?.includes(trackForTalk)
+              : trackData.title === trackForTalk
+          );
 
           if (existingTrackForTalk) {
             existingTrackForTalk.records.push(talk);
