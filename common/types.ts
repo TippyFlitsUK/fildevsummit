@@ -1,6 +1,7 @@
 export enum BlockTypeEnum {
   COLLAPSABLE = 'collapsable',
   COLLAPSABLES = 'collapsables',
+  COLLAPSABLE_SCHEDULE = 'collapsable-schedule',
   HERO = 'hero',
   HERO_NO_BACKGROUND = 'hero-no-background',
   IMAGE_TEXT = 'image-text',

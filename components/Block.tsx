@@ -1,5 +1,6 @@
 import { BlockTypeEnum } from '@root/common/types';
 import { Collapsable } from './Collapsable';
+import { CollapsableSchedule } from './CollapsableSchedule';
 
 import Collapsables from './Collapsables';
 import Hero from './Hero';
@@ -34,6 +35,8 @@ export function Block({ block }) {
       return <Collapsable {...block} />;
     case (block.type = BlockTypeEnum.COLLAPSABLES):
       return <Collapsables {...block} />;
+    case (block.type = BlockTypeEnum.COLLAPSABLE_SCHEDULE):
+      return <CollapsableSchedule {...block} />;
     case (block.type = BlockTypeEnum.MEDIA_GRID):
       return <MediaGrid {...block} />;
     case (block.type = BlockTypeEnum.MEDIA_GRID_SCROLLABLE):
